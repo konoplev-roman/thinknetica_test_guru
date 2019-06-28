@@ -1,24 +1,13 @@
-# README
+# TestGuru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Учебый проект курса "Основы Rails" онлайн-школы [Thinknetica](http://www.thinknetica.com/)
 
-Things you may want to cover:
+## Сущности проекта
 
-* Ruby version
+* Пользователи
 
-* System dependencies
+* Тесты
 
-* Configuration
+* Вопросы
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ответы
