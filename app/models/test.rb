@@ -3,6 +3,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :passed_tests
   has_many :users, through: :passed_tests
+  has_many :questions, dependent: :destroy
 
   def self.names_by_category(category)
     joins(:category)
