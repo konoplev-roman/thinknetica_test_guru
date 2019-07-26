@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index]
   before_action :find_question, only: %i[show destroy]
 
+  skip_before_action :verify_authenticity_token, only: :destroy
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
   def index
