@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index]
-  before_action :find_question, only: %i[show]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
@@ -12,6 +12,10 @@ class QuestionsController < ApplicationController
 
   def show
     render plain: @question.body
+  end
+
+  def destroy
+    @question.destroy
   end
 
   private
