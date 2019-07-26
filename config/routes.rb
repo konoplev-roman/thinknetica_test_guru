@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tests do
-    resources :questions, shallow: true
+  resources :tests, only: [] do
+    resources :questions, only: [], shallow: true
   end
 end
