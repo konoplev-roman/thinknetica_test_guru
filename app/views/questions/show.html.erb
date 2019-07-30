@@ -1,0 +1,15 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1><%= @question.body %></h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Answer</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @question.answers %>
+    </tbody>
+  </table>
+</div>

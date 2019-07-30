@@ -6,9 +6,7 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
-  def show
-    render plain: @question.body
-  end
+  def show; end
 
   def destroy
     @question.destroy
