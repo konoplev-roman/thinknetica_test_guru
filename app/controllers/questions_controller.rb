@@ -6,12 +6,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
-  def index
-    result = @test.questions.pluck(:body)
-
-    render plain: result.join("\n")
-  end
-
   def show
     render plain: @question.body
   end
