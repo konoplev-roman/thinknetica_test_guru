@@ -11,5 +11,9 @@
     <tbody>
       <%= render @question.answers %>
     </tbody>
+
+    <tr>
+      <td class="text-right"><%= link_to 'Back', test_path(@question.test) %></td>
+    </tr>
   </table>
 </div>
