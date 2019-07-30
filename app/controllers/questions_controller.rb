@@ -2,14 +2,14 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy]
 
-  skip_before_action :verify_authenticity_token, only: :destroy
-
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
   def show; end
 
   def destroy
     @question.destroy
+
+    redirect_to test_path(@question.test)
   end
 
   def new; end
