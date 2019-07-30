@@ -3,5 +3,5 @@
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
   <td class="text-right"><a href="#">Edit</a></td>
-  <td class="text-right"><a href="#">Delete</a></td>
+  <td class="text-right"><%= link_to 'Delete', test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
