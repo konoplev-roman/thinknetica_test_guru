@@ -1,5 +1,5 @@
 <tr>
-  <td><a href="#"><%= test.title %></a></td>
+  <td><%= link_to test.title, test_path(test) %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
   <td class="text-right"><a href="#">Edit</a></td>
