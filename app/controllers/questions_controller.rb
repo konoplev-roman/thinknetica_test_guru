@@ -13,24 +13,32 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
+
+    render '_form'
   end
 
   def create
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_path(@question.test)
+      redirect_to test_path(@test)
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit
+    @test = @question.test
+
+    render '_form'
+  end
 
   def update
+    @test = @question.test
+
     if @question.update(question_params)
-      redirect_to test_path(@question.test)
+      redirect_to test_path(@test)
     else
       render :edit
     end
