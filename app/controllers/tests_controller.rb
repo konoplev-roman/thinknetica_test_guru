@@ -25,7 +25,7 @@ class TestsController < ApplicationController
     @test.author = User.all.sample
 
     if @test.save
-      redirect_to test_path(@test)
+      redirect_to @test
     else
       render :new
     end
@@ -35,7 +35,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to test_path(@test)
+      redirect_to @test
     else
       render :edit
     end
