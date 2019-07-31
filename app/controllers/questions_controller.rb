@@ -29,16 +29,12 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @test = @question.test
-
     render '_form'
   end
 
   def update
-    @test = @question.test
-
     if @question.update(question_params)
-      redirect_to test_path(@test)
+      redirect_to test_path(@question.test)
     else
       render '_form'
     end
