@@ -1,13 +1,17 @@
-<h1>Create new question</h1>
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1>Create new question</h1>
 
-<form action="<%= test_questions_path(@test) %>" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <%= form_with model: [@test, @question], local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :body %>
+      <%= form.text_area :body, id: :question_body, cols: 40, rows: 3, class: 'form-control' %>
+    </div>
 
-  <p>
-    <label for="question-body">Question:</label>
-    <br><br>
-    <textarea id="question-body" name="question[body]" rows="3" cols="40">Text of the question...</textarea>
-  </p>
+    <hr class="mb-4">
 
-  <p><input type="submit" value="Create"></p>
-</form>
+    <div class="d-flex bd-highlight mb-3">
+      <%= form.submit class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Back', test_path(@test), class: 'ml-auto' %>
+    </div>
+  <% end %>
+</div>

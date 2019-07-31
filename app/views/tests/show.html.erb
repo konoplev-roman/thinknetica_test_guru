@@ -15,7 +15,7 @@
       <%= render @test.questions %>
 
       <tr>
-        <td colspan="3" class="text-right"><a href="#">Add new question</a></td>
+        <td colspan="3" class="text-right"><%= link_to 'Add new question', new_test_question_path(@test) %></td>
       </tr>
       <tr>
         <td colspan="3" class="text-right"><%= link_to 'Back', tests_path %></td>

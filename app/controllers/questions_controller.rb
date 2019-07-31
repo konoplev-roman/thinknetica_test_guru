@@ -12,12 +12,18 @@ class QuestionsController < ApplicationController
     redirect_to test_path(@question.test)
   end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
-    question = @test.questions.create!(question_params)
+    @question = @test.questions.new(question_params)
 
-    redirect_to question
+    if @question.save
+      redirect_to test_path(@question.test)
+    else
+      render :new
+    end
   end
 
   private
