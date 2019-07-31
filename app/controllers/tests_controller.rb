@@ -17,8 +17,6 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
-
-    render '_form'
   end
 
   def create
@@ -29,19 +27,17 @@ class TestsController < ApplicationController
     if @test.save
       redirect_to test_path(@test)
     else
-      render '_form'
+      render :new
     end
   end
 
-  def edit
-    render '_form'
-  end
+  def edit; end
 
   def update
     if @test.update(test_params)
       redirect_to test_path(@test)
     else
-      render '_form'
+      render :edit
     end
   end
 

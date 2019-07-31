@@ -14,8 +14,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
-
-    render '_form'
   end
 
   def create
@@ -24,19 +22,17 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to test_path(@test)
     else
-      render '_form'
+      render :new
     end
   end
 
-  def edit
-    render '_form'
-  end
+  def edit; end
 
   def update
     if @question.update(question_params)
       redirect_to test_path(@question.test)
     else
-      render '_form'
+      render :edit
     end
   end
 
