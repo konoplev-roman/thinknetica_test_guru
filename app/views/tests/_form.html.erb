@@ -1,0 +1,29 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1><%= test_header(@test) %></h1>
+
+  <%= render 'shared/errors', recource: @test %>
+
+  <%= form_with model: @test, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :test_title, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :level %>
+      <%= form.number_field :level, id: :test_level, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :category_id %>
+      <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: true, id: :test_category_id }, { class: 'form-control' } %>
+    </div>
+
+    <hr class="mb-4">
+
+    <div class="d-flex bd-highlight mb-3">
+      <%= form.submit class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Back', tests_path, class: 'ml-auto' %>
+    </div>
+  <% end %>
+</div>

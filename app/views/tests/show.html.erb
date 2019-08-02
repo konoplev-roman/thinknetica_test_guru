@@ -1,0 +1,25 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1><%= @test.title %></h1>
+
+  <p class="small">Category: <%= @test.category.title %>; Level: <%= test_level(@test) %>; Author: <%= @test.author.name %></p>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col" colspan="2" class="text-right">Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <%= render @test.questions %>
+
+      <tr>
+        <td colspan="3" class="text-right"><%= link_to 'Add new question', new_test_question_path(@test) %></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-right"><%= link_to 'Back', tests_path %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

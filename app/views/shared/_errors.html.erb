@@ -1,0 +1,9 @@
+<% if recource.errors.present? %>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading"><%= pluralize(recource.errors.count, 'error') %> detected!</h4>
+    <hr>
+    <% recource.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
