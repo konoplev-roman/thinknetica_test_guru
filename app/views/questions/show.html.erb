@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th scope="col">Answer</th>
+        <th scope="col" colspan="2" class="text-right">Actions</th>
       </tr>
     </thead>
 
@@ -13,7 +14,10 @@
     </tbody>
 
     <tr>
-      <td class="text-right"><%= link_to 'Back', test_path(@question.test) %></td>
+      <td colspan="3" class="text-right"><%= link_to 'Add new answer', new_question_answer_path(@question) %></td>
+    </tr>
+    <tr>
+      <td colspan="3" class="text-right"><%= link_to 'Back', test_path(@question.test) %></td>
     </tr>
   </table>
 </div>
