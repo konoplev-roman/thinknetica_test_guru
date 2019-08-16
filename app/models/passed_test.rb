@@ -15,7 +15,15 @@ class PassedTest < ApplicationRecord
     current_question.nil?
   end
 
+  def success?
+    success_percent >= 85
+  end
+
   private
+
+  def success_percent
+    correct_questions.to_f * 100 / test.questions.count
+  end
 
   def before_validation_set_question
     self.current_question = next_question

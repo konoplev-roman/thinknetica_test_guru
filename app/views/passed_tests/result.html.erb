@@ -1,5 +1,9 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
-  <h1>The <%= @passed_test.test.title %> Test was Completed!</h1>
+  <% if @passed_test.success? %>
+    <h1 class="alert alert-success">The <%= @passed_test.test.title %> Test passed successfully!</h1>
+  <% else %>
+    <h1 class="alert alert-danger">The <%= @passed_test.test.title %> Test failed!</h1>
+  <% end %>
 
   <div class="d-flex bd-highlight mb-3">
     <%= link_to 'Back', tests_path, class: 'ml-auto' %>
