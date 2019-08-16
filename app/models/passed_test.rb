@@ -19,15 +19,15 @@ class PassedTest < ApplicationRecord
     success_percent >= 85
   end
 
+  def success_percent
+    (correct_questions.to_f * 100 / test.questions.count).round(0)
+  end
+
   def position_current_question
     test.questions.index(current_question) + 1
   end
 
   private
-
-  def success_percent
-    correct_questions.to_f * 100 / test.questions.count
-  end
 
   def before_validation_set_question
     self.current_question = next_question
