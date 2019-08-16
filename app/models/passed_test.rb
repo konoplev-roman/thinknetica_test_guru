@@ -19,6 +19,10 @@ class PassedTest < ApplicationRecord
     success_percent >= 85
   end
 
+  def position_current_question
+    test.questions.index(current_question) + 1
+  end
+
   private
 
   def success_percent
