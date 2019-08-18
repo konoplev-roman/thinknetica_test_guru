@@ -1,4 +1,5 @@
 class PassedTestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_passed_test, only: %i[show result update]
 
   def show; end
