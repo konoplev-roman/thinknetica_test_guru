@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 users = User.create!([
-  { name: 'Вася', email: 'vasya@example.com' },
-  { name: 'Петя', email: 'petya@example.com' }
+  { name: 'Вася', email: 'vasya@example.com', password: 'vasya123' },
+  { name: 'Петя', email: 'petya@example.com', password: 'petya123' }
 ])
 
 categories = Category.create!([
