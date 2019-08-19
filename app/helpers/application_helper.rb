@@ -8,11 +8,11 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    case level.to_sym
-    when :notice then 'alert alert-info'
-    when :success then 'alert alert-success'
-    when :error then 'alert alert-danger'
-    when :alert then 'alert alert-danger'
-    end
+    {
+      notice: 'alert alert-info',
+      success: 'alert alert-success',
+      error: 'alert alert-danger',
+      alert: 'alert alert-danger'
+    }[level.to_sym]
   end
 end
