@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
 
       redirect_to(cookies[:return_to] || root_path)
+
+      cookies.delete(:return_to)
     else
       flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please!'
 
