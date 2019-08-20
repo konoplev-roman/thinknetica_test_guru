@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-users = User.create!([
-  { name: 'Вася', email: 'vasya@example.com', password: 'vasya123' },
-  { name: 'Петя', email: 'petya@example.com', password: 'petya123' }
-])
+vasya = User.new(name: 'Вася', email: 'vasya@example.com', password: 'vasya123', password_confirmation: 'vasya123')
+vasya.skip_confirmation!
+vasya.save!
+
+petya = User.new(name: 'Петя', email: 'petya@example.com', password: 'petya123', password_confirmation: 'petya123')
+petya.skip_confirmation!
+petya.save!
 
 categories = Category.create!([
   { title: 'История' },
@@ -12,17 +15,17 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { category: categories[0], title: 'Древняя Русь', level: 1, author: users[1] },
-  { category: categories[0], title: 'Всемирная история', level: 2, author: users[1] },
-  { category: categories[1], title: 'Общие темы', level: 3, author: users[0] },
-  { category: categories[2], title: 'Общие темы', level: 5, author: users[0] }
+  { category: categories[0], title: 'Древняя Русь', level: 1, author: petya },
+  { category: categories[0], title: 'Всемирная история', level: 2, author: petya },
+  { category: categories[1], title: 'Общие темы', level: 3, author: vasya },
+  { category: categories[2], title: 'Общие темы', level: 5, author: vasya }
 ])
 
 PassedTest.create([
-  { user: users[0], test: tests[0] },
-  { user: users[0], test: tests[1] },
-  { user: users[1], test: tests[2] },
-  { user: users[1], test: tests[3] }
+  { user: vasya, test: tests[0] },
+  { user: vasya, test: tests[1] },
+  { user: petya, test: tests[2] },
+  { user: petya, test: tests[3] }
 ])
 
 questions = Question.create!([
