@@ -15,10 +15,10 @@
       <%= render @test.questions %>
 
       <tr>
-        <td colspan="3" class="text-right"><%= link_to 'Add new question', new_test_question_path(@test) %></td>
+        <td colspan="3" class="text-right"><%= link_to 'Add new question', new_admin_test_question_path(@test) %></td>
       </tr>
       <tr>
-        <td colspan="3" class="text-right"><%= link_to 'Back', tests_path %></td>
+        <td colspan="3" class="text-right"><%= link_to 'Back', admin_tests_path %></td>
       </tr>
     </tbody>
   </table>

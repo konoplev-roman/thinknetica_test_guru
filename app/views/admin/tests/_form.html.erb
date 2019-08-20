@@ -3,7 +3,7 @@
 
   <%= render 'shared/errors', recource: @test %>
 
-  <%= form_with model: @test, local: true do |form| %>
+  <%= form_with model: [:admin, @test], local: true do |form| %>
     <div class="mb-3">
       <%= form.label :title %>
       <%= form.text_field :title, id: :test_title, class: 'form-control' %>
@@ -23,7 +23,7 @@
 
     <div class="d-flex bd-highlight mb-3">
       <%= form.submit class: 'btn btn-primary btn-lg' %>
-      <%= link_to 'Back', tests_path, class: 'ml-auto' %>
+      <%= link_to 'Back', admin_tests_path, class: 'ml-auto' %>
     </div>
   <% end %>
 </div>
