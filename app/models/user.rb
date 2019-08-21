@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :passed_tests, dependent: :destroy
+  has_many :tests, through: :passed_tests
+
+  validates :name, presence: true
+
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -6,12 +12,6 @@ class User < ApplicationRecord
          :trackable,
          :validatable,
          :confirmable
-
-  has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
-  has_many :passed_tests, dependent: :destroy
-  has_many :tests, through: :passed_tests
-
-  validates :name, presence: true
 
   def tests_by_level(level)
     tests.level(level)
