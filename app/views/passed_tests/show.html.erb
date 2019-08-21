@@ -2,7 +2,7 @@
   <h1>Passing the <%= @passed_test.test.title %> Test</h1>
 
   <%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
-    <p class="small">Category: <%= @passed_test.test.category.title %>; Level: <%= test_level(@passed_test.test) %>; Author: <%= @passed_test.test.author.email %></p>
+    <p class="small">Category: <%= @passed_test.test.category.title %>; Level: <%= test_level(@passed_test.test) %>; Author: <%= @passed_test.test.author.first_name %></p>
     <p class="small">The <%= @passed_test.position_current_question %> of <%= pluralize(@passed_test.test.questions.count, 'question') %></p>
 
     <p><%= @passed_test.current_question.body %></p>
