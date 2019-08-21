@@ -5,7 +5,7 @@
 
   <%= render 'shared/errors', recource: @answer %>
 
-  <%= form_with model: [@question, @answer], local: true do |form| %>
+  <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
     <div class="mb-3">
       <%= form.label :body %>
       <%= form.text_area :body, id: :answer_body, cols: 40, rows: 3, class: 'form-control' %>
@@ -20,7 +20,7 @@
 
     <div class="d-flex bd-highlight mb-3">
       <%= form.submit class: 'btn btn-primary btn-lg' %>
-      <%= link_to 'Back', question_path(@answer.question), class: 'ml-auto' %>
+      <%= link_to 'Back', admin_question_path(@answer.question), class: 'ml-auto' %>
     </div>
   <% end %>
 </div>

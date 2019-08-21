@@ -1,21 +1,15 @@
 class ApplicationController < ActionController::Base
-  helper_method %i[current_user logged_in?]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  private
+  protected
 
-  def authenticate_user!
-    unless current_user
-      redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please!'
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password)}
 
-      cookies[:return_to] = request.url
-    end
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :current_password)}
   end
 
-  def current_user
-    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def after_sign_in_path_for(user)
+    user.admin? ? admin_tests_path : tests_path
   end
 end

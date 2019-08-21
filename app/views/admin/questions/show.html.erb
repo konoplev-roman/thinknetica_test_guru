@@ -14,10 +14,10 @@
     </tbody>
 
     <tr>
-      <td colspan="3" class="text-right"><%= link_to 'Add new answer', new_question_answer_path(@question) %></td>
+      <td colspan="3" class="text-right"><%= link_to 'Add new answer', new_admin_question_answer_path(@question) %></td>
     </tr>
     <tr>
-      <td colspan="3" class="text-right"><%= link_to 'Back', test_path(@question.test) %></td>
+      <td colspan="3" class="text-right"><%= link_to 'Back', admin_test_path(@question.test) %></td>
     </tr>
   </table>
 </div>

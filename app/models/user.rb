@@ -3,10 +3,15 @@ class User < ApplicationRecord
   has_many :passed_tests, dependent: :destroy
   has_many :tests, through: :passed_tests
 
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :first_name, :last_name, presence: true
 
-  has_secure_password
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   def tests_by_level(level)
     tests.level(level)
@@ -14,5 +19,9 @@ class User < ApplicationRecord
 
   def passed_test(test)
     passed_tests.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def admin?
+    is_a?(Admin)
   end
 end
