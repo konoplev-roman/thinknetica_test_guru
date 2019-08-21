@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-vasya = User.new(name: 'Вася', email: 'vasya@example.com', password: 'vasya123', password_confirmation: 'vasya123')
+vasya = User.new(email: 'vasya@example.com', password: 'vasya123', password_confirmation: 'vasya123')
 vasya.skip_confirmation!
 vasya.save!
 
-petya = User.new(name: 'Петя', email: 'petya@example.com', password: 'petya123', password_confirmation: 'petya123')
+petya = User.new(email: 'petya@example.com', password: 'petya123', password_confirmation: 'petya123')
 petya.skip_confirmation!
 petya.save!
 
