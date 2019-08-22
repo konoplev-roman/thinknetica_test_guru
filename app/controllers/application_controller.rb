@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
+
   def default_url_options
     { lang: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
@@ -20,5 +22,11 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  end
+
+  def rescue_with_not_found
+    flash.alert = t('record_not_found')
+
+    redirect_to root_path
   end
 end

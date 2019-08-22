@@ -4,8 +4,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Answer</th>
-        <th scope="col" colspan="2" class="text-right">Actions</th>
+        <th scope="col"><%= t('.table.answer') %></th>
+        <th scope="col" colspan="2" class="text-right"><%= t('.table.actions') %></th>
       </tr>
     </thead>
 
@@ -14,10 +14,10 @@
     </tbody>
 
     <tr>
-      <td colspan="3" class="text-right"><%= link_to 'Add new answer', new_admin_question_answer_path(@question) %></td>
+      <td colspan="3" class="text-right"><%= link_to t('.add_new_answer'), new_admin_question_answer_path(@question) %></td>
     </tr>
     <tr>
-      <td colspan="3" class="text-right"><%= link_to 'Back', admin_test_path(@question.test) %></td>
+      <td colspan="3" class="text-right"><%= link_to t('back'), admin_test_path(@question.test) %></td>
     </tr>
   </table>
 </div>

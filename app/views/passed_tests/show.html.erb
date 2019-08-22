@@ -1,9 +1,9 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
-  <h1>Passing the <%= @passed_test.test.title %> Test</h1>
+  <h1><%= t('.header', test: @passed_test.test.title) %></h1>
 
   <%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
-    <p class="small">Category: <%= @passed_test.test.category.title %>; Level: <%= test_level(@passed_test.test) %>; Author: <%= @passed_test.test.author.first_name %></p>
-    <p class="small">The <%= @passed_test.position_current_question %> of <%= pluralize(@passed_test.test.questions.count, 'question') %></p>
+    <p class="small"><%= t('.description', category: @passed_test.test.category.title, level: test_level(@passed_test.test), author: @passed_test.test.author.first_name) %></p>
+    <p class="small"><%= t('.position_of_question', count: @passed_test.test.questions.count, position: @passed_test.position_current_question) %></p>
 
     <p><%= @passed_test.current_question.body %></p>
 

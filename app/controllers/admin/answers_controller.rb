@@ -2,12 +2,10 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[destroy edit update]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
-
   def destroy
     @answer.destroy
 
-    redirect_to [:admin, @answer.question]
+    redirect_to [:admin, @answer.question], notice: t('.success')
   end
 
   def new
@@ -18,7 +16,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to [:admin, @question]
+      redirect_to [:admin, @question], notice: t('.success')
     else
       render :new
     end
@@ -28,7 +26,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to [:admin, @answer.question]
+      redirect_to [:admin, @answer.question], notice: t('.success')
     else
       render :edit
     end
@@ -42,10 +40,6 @@ class Admin::AnswersController < Admin::BaseController
 
   def find_answer
     @answer = Answer.find(params[:id])
-  end
-
-  def rescue_with_not_found
-    render plain: 'Record was not found!!!'
   end
 
   def answer_params

@@ -1,36 +1,143 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      test:
+        one: "Test"
+        other: "Tests"
+      question:
+        one: "Question"
+        other: "Questions"
+      answer:
+        one: "Answer"
+        other: "Answers"
+      category:
+        one: "Category"
+        other: "Categories"
+      passed_test:
+        one: "Test passage"
+        other: "Test passages"
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        author: "Author"
+      question:
+        body: "Question"
+        test: "Test"
+      answer:
+        body: "Answer"
+        question: "Question"
+        correct: "Correct?"
+      category:
+        title: "Category"
+      passed_test:
+        user: "User"
+        test: "Test"
+        correct_questions: "Correct answers"
+        question: "Current question"
   helpers:
     select:
       prompt: "Please select"
+    submit:
+      create: "Create"
+      update: "Update"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        body: "Answer"
+        correct: "Correct"
+  admin:
+    title: "TestGuru Admin Panel"
+    nav:
+      title: "TestGuru Admin Panel"
+      logout: "Logout"
+      signup: "Signup"
+      login: "Login"
+    tests:
+      index:
+        header: "List of tests"
+        table:
+          title: "Title"
+          level: "Level"
+          count_of_questions: "Number of questions"
+          actions: "Actions"
+        add_new_test: "Add new test"
+      show:
+        description: "Category: %{category}; Level: %{level}; Author: %{author}"
+        table:
+          question: "Question"
+          actions: "Actions"
+        add_new_question: "Add new question"
+      destroy:
+        success: "Test successfully removed!"
+      create:
+        success: "Test successfully created!"
+      update:
+        success: "Test successfully updated!"
+    questions:
+      show:
+        table:
+          answer: "Answer"
+          actions: "Actions"
+        add_new_answer: "Add new answer"
+      destroy:
+        success: "Question successfully removed!"
+      create:
+        success: "Question successfully created!"
+      update:
+        success: "Question successfully updated!"
+    answers:
+      destroy:
+        success: "Answer successfully removed!"
+      create:
+        success: "Answer successfully created!"
+      update:
+        success: "Answer successfully updated!"
+  tests:
+    index:
+      header: "List of tests"
+      table:
+        title: "Title"
+        level: "Level"
+        count_of_questions: "Number of questions"
+        actions: "Actions"
+    test:
+      start: "Start"
+  passed_tests:
+    show:
+      header: "Passing the %{test} Test"
+      description: "Category: %{category}; Level: %{level}; Author: %{author}"
+      position_of_question:
+        one: "The %{position} of %{count} question"
+        other: "The %{position} of %{count} questions"
+    result:
+      success: "The \"%{title}\" Test passed successfully!"
+      failure: "The \"%{title}\" Test failed!"
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected!"
+        other: "%{count} errors detected!"
+    footer:
+      project_description: "Training project of the course \"Basics of Rails\" from online school"
+      thinknetica: "Thinknetica"
+      author: "Konoplev Roman"
+    nav:
+      title: "TestGuru"
+      logout: "Logout"
+      signup: "Signup"
+      login: "Login"
+  title: "TestGuru"
+  welcome: "Welcome, %{name} Guru!"
+  back: "Back"
+  edit: "Edit"
+  delete: "Delete"
+  are_you_sure: "Are you sure?"
+  record_not_found: "The requested record was not found. You have been redirected to the home page."
+  not_authorized: "You are not authorized to view this page!"
