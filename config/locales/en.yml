@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    select:
+      prompt: "Please select"

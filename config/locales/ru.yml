@@ -1,2 +1,5 @@
 ru:
   hello: "Привет, мир!"
+  helpers:
+    select:
+      prompt: "Пожалуйста, выберите"
