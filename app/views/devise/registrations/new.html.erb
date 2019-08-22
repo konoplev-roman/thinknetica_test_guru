@@ -1,5 +1,5 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
-  <h1>Become a Guru</h1>
+  <h1><%= t('.sign_up') %></h1>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -23,7 +23,7 @@
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
       <% if @minimum_password_length %>
-        <small class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
+        <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
       <% end %>
     </div>
 
@@ -35,7 +35,7 @@
     <hr class="mb-4">
 
     <div class="d-flex bd-highlight mb-3">
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-lg' %>
+      <%= f.submit t('.sign_up'), class: 'btn btn-primary btn-lg' %>
       <p class="ml-auto mb-0 text-right">
         <%= link_to 'Back', root_path %><br>
         <%= render "devise/shared/links" %>
