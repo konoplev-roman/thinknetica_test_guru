@@ -64,11 +64,6 @@ ru:
         correct: "Правильный"
   admin:
     title: "Панель администратора TestGuru"
-    nav:
-      title: "Панель администратора TestGuru"
-      logout: "Выйти"
-      signup: "Регистрация"
-      login: "Войти"
     tests:
       index:
         header: "Список тестов"
@@ -142,11 +137,12 @@ ru:
       project_description: "Учебый проект курса \"Основы Rails\" онлайн-школы"
       thinknetica: "Thinknetica"
       author: "Коноплев Роман"
-    nav:
-      title: "TestGuru"
-      logout: "Выйти"
-      signup: "Регистрация"
-      login: "Войти"
+  nav:
+    root: "TestGuru"
+    admin: "Панель администратора"
+    logout: "Выйти"
+    signup: "Регистрация"
+    login: "Войти"
   title: "TestGuru"
   welcome: "Добро пожаловать, Гуру %{name}!"
   back: "Назад"
