@@ -1,5 +1,5 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
-  <h1>Enter the Guru Gates</h1>
+  <h1><%= t('.sign_in') %></h1>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -24,7 +24,7 @@
     <hr class="mb-4">
 
     <div class="d-flex bd-highlight mb-3">
-      <%= f.submit 'Log in', class: 'btn btn-primary btn-lg' %>
+      <%= f.submit t('.sign_in'), class: 'btn btn-primary btn-lg' %>
       <p class="ml-auto mb-0 text-right">
         <%= render "devise/shared/links" %>
       </p>

@@ -1,11 +1,11 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
   <% if @passed_test.success? %>
-    <h1>The <%= @passed_test.test.title %> Test passed successfully! <span class="badge badge-success"><%= @passed_test.success_percent %>%</span></h1>
+    <h1><%= t('.success', title: @passed_test.test.title) %> <span class="badge badge-success"><%= @passed_test.success_percent %>%</span></h1>
   <% else %>
-    <h1>The <%= @passed_test.test.title %> Test failed! <span class="badge badge-danger"><%= @passed_test.success_percent %>%</span></h1>
+    <h1><%= t('.failure', title: @passed_test.test.title) %> <span class="badge badge-danger"><%= @passed_test.success_percent %>%</span></h1>
   <% end %>
 
   <div class="d-flex bd-highlight mb-3">
-    <%= link_to 'Back', tests_path, class: 'ml-auto' %>
+    <%= link_to t('back'), tests_path, class: 'ml-auto' %>
   </div>
 </div>

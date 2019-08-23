@@ -1,5 +1,5 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
-  <h1>Change your password</h1>
+  <h1><%= t('.change_your_password') %></h1>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -7,22 +7,22 @@
     <%= f.hidden_field :reset_password_token %>
 
     <div class="mb-3">
-      <%= f.label :password, 'New password' %>
+      <%= f.label :password, t('.new_password') %>
       <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
       <% if @minimum_password_length %>
-        <small class="form-text text-muted"><%= @minimum_password_length %> characters minimum</small>
+        <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
       <% end %>
     </div>
 
     <div class="mb-3">
-      <%= f.label :password_confirmation, 'Confirm new password' %>
+      <%= f.label :password_confirmation, t('.confirm_new_password') %>
       <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
     </div>
 
     <hr class="mb-4">
 
     <div class="d-flex bd-highlight mb-3">
-      <%= f.submit 'Change my password', class: 'btn btn-primary btn-lg' %>
+      <%= f.submit t('.change_my_password'), class: 'btn btn-primary btn-lg' %>
     </div>
   <% end %>
 </div>
