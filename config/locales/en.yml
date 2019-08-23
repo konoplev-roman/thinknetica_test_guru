@@ -54,11 +54,6 @@ en:
         correct: "Correct"
   admin:
     title: "TestGuru Admin Panel"
-    nav:
-      title: "TestGuru Admin Panel"
-      logout: "Logout"
-      signup: "Signup"
-      login: "Login"
     tests:
       index:
         header: "List of tests"
@@ -128,11 +123,12 @@ en:
       project_description: "Training project of the course \"Basics of Rails\" from online school"
       thinknetica: "Thinknetica"
       author: "Konoplev Roman"
-    nav:
-      title: "TestGuru"
-      logout: "Logout"
-      signup: "Signup"
-      login: "Login"
+  nav:
+    root: "TestGuru"
+    admin: "Admin Panel"
+    logout: "Logout"
+    signup: "Signup"
+    login: "Login"
   title: "TestGuru"
   welcome: "Welcome, %{name} Guru!"
   back: "Back"
