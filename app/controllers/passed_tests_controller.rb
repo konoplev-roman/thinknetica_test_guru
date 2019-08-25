@@ -22,7 +22,7 @@ class PassedTestsController < ApplicationController
     result = GistQuestionService.new(@passed_test.current_question, client: Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])).call
 
     flash_options = if result['html_url'].present?
-                      { notice: t('.success') }
+                      { notice: t('.success', href: result['html_url']) }
                     else
                       { alert: t('.failure') }
                     end
