@@ -33,3 +33,7 @@
 # Ignore database configuration
 /config/database.yml
 !/config/database.yml.sample
+
+# Used by dotenv library to load environment variables.
+.env
+!.env.template
