@@ -123,3 +123,8 @@ Answer.create!([
   { question: questions[15], body: 'Совокупность нормативно-правовых актов, регулирующих общественные отношения в сфере финансовой деятельности государства' },
   { question: questions[15], body: 'Система научных взглядов на правоприменительную практику в сфере финансовой деятельности государства' }
 ])
+
+Gist.create([
+  { user: vasya, question: questions[0], url: 'https://gist.github.com/1152c4e0e09e1f8616c278a1a4a214a3' },
+  { user: petya, question: questions[1], url: 'https://gist.github.com/fe9e0ca38d25d69f270119a1f513ed79' }
+])
