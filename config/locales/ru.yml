@@ -157,7 +157,10 @@ ru:
       author: "Коноплев Роман"
   nav:
     root: "TestGuru"
-    admin: "Панель администратора"
+    admin:
+      title: "Панель администратора"
+      tests: "Список тестов"
+      gists: "GitHub Gists"
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"

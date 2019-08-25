@@ -143,7 +143,10 @@ en:
       author: "Konoplev Roman"
   nav:
     root: "TestGuru"
-    admin: "Admin Panel"
+    admin:
+      title: "Admin Panel"
+      tests: "List of tests"
+      gists: "GitHub Gists"
     logout: "Logout"
     signup: "Signup"
     login: "Login"
