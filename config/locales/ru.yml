@@ -111,6 +111,13 @@ ru:
         success: "Ответ успешно создан!"
       update:
         success: "Ответ успешно обновлен!"
+    gists:
+      index:
+        header: "GitHub Gists"
+        table:
+          user: "Пользователь"
+          question: "Вопрос"
+          url: "URL"
   tests:
     index:
       header: "Список тестов"

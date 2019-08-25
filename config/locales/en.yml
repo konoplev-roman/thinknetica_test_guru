@@ -101,6 +101,13 @@ en:
         success: "Answer successfully created!"
       update:
         success: "Answer successfully updated!"
+    gists:
+      index:
+        header: "GitHub Gists"
+        table:
+          user: "User"
+          question: "Question"
+          url: "URL"
   tests:
     index:
       header: "List of tests"
