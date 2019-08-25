@@ -19,7 +19,7 @@ class PassedTestsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@passed_test.current_question).call
+    result = GistQuestionService.new(@passed_test.current_question, client: Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])).call
 
     flash_options = if result['html_url'].present?
                       { notice: t('.success') }
