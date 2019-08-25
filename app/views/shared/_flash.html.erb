@@ -1,6 +1,6 @@
 <% flash.each do |key, value| %>
   <div class="<%= flash_class(key) %>" role="alert">
-    <p class="mb-0"><%= value %></p>
+    <p class="mb-0"><%= value.html_safe %></p>
   </div>
 <% end %>
 
