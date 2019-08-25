@@ -16,6 +16,9 @@ en:
       passed_test:
         one: "Test passage"
         other: "Test passages"
+      gist:
+        one: "GitHub Gist"
+        other: "GitHub Gists"
     attributes:
       test:
         title: "Title"
@@ -36,6 +39,10 @@ en:
         test: "Test"
         correct_questions: "Correct answers"
         question: "Current question"
+      gist:
+        user: "User"
+        question: "Question"
+        url: "URL"
   helpers:
     select:
       prompt: "Please select"

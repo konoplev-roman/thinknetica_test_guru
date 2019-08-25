@@ -21,11 +21,13 @@ class PassedTestsController < ApplicationController
   def gist
     result = GistQuestionService.new(@passed_test.current_question, client: Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])).call
 
-    flash_options = if result['html_url'].present?
-                      { notice: t('.success', href: result['html_url']) }
-                    else
-                      { alert: t('.failure') }
-                    end
+    if result['html_url'].present?
+      Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result['html_url'])
+
+      flash_options = { notice: t('.success', href: result['html_url']) }
+    else
+      flash_options = { alert: t('.failure') }
+    end
 
     redirect_to @passed_test, flash_options
   end

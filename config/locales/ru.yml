@@ -26,6 +26,9 @@ ru:
         many: "Прохождений тестов"
         one: "Прохождение теста"
         other: "Прохождения тестов"
+      gist:
+        one: "GitHub Gist"
+        other: "GitHub Gists"
     attributes:
       test:
         title: "Название"
@@ -46,6 +49,10 @@ ru:
         test: "Тест"
         correct_questions: "Правильных ответов"
         question: "Текущий вопрос"
+      gist:
+        user: "Пользователь"
+        question: "Вопрос"
+        url: "URL"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
