@@ -123,9 +123,13 @@ ru:
         many: "%{position} из %{count} вопросов"
         one: "%{position} из %{count} вопроса"
         other: "%{position} из %{count} вопроса"
+      create_gist: "Сохранить в GitHub Gist"
     result:
       success: "Тест \"%{title}\" пройден успешно!"
       failure: "Тест \"%{title}\" провален!"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения Gist произошла ошибка!"
   shared:
     errors:
       header:
@@ -143,6 +147,9 @@ ru:
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"
+  gist:
+    description: "Вопрос теста \"%{test}\" с сайта Thinknetica TestGuru"
+    answers: "Ответы:"
   title: "TestGuru"
   welcome: "Добро пожаловать, Гуру %{name}!"
   back: "Назад"
