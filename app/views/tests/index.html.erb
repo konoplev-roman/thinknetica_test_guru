@@ -4,7 +4,13 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col"><%= t('.table.title') %></th>
+        <th scope="col" class="sort-by-title">
+          <%= t('.table.title') %>
+          <span class="sort">
+            <%= octicon 'triangle-up', height: 12, class: 'sort-asc' %>
+            <%= octicon 'triangle-down', height: 12, class: 'sort-desc' %>
+          </span>
+        </th>
         <th scope="col"><%= t('.table.level') %></th>
         <th scope="col"><%= t('.table.count_of_questions') %></th>
         <th scope="col" class="text-right"><%= t('.table.actions') %></th>

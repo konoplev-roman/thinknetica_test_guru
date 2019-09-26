@@ -1,0 +1,21 @@
+.sort-by-title {
+  cursor: pointer;
+}
+
+.sort {
+  float: right;
+}
+
+.sort-asc {
+  display: block;
+  opacity: .3;
+}
+
+.sort-desc {
+  display: block;
+  opacity: .3;
+}
+
+.sort-active {
+  opacity: 1;
+}
