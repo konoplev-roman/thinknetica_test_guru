@@ -19,7 +19,7 @@ class PassedTestsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@passed_test.current_question, client: Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])).call
+    result = GistQuestionService.new(@passed_test.current_question).call
 
     if result['html_url'].present?
       Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result['html_url'])
