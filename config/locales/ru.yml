@@ -26,6 +26,9 @@ ru:
         many: "Прохождений тестов"
         one: "Прохождение теста"
         other: "Прохождения тестов"
+      gist:
+        one: "GitHub Gist"
+        other: "GitHub Gists"
     attributes:
       test:
         title: "Название"
@@ -46,6 +49,10 @@ ru:
         test: "Тест"
         correct_questions: "Правильных ответов"
         question: "Текущий вопрос"
+      gist:
+        user: "Пользователь"
+        question: "Вопрос"
+        url: "URL"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -104,6 +111,13 @@ ru:
         success: "Ответ успешно создан!"
       update:
         success: "Ответ успешно обновлен!"
+    gists:
+      index:
+        header: "GitHub Gists"
+        table:
+          user: "Пользователь"
+          question: "Вопрос"
+          url: "URL"
   tests:
     index:
       header: "Список тестов"
@@ -123,9 +137,14 @@ ru:
         many: "%{position} из %{count} вопросов"
         one: "%{position} из %{count} вопроса"
         other: "%{position} из %{count} вопроса"
+      create_gist: "Сохранить в GitHub Gist"
     result:
       success: "Тест \"%{title}\" пройден успешно!"
       failure: "Тест \"%{title}\" провален!"
+    gist:
+      see: "Посмотреть"
+      success: "Gist успешно сохранен! %{link}"
+      failure: "Во время сохранения Gist произошла ошибка!"
   shared:
     errors:
       header:
@@ -139,10 +158,16 @@ ru:
       author: "Коноплев Роман"
   nav:
     root: "TestGuru"
-    admin: "Панель администратора"
+    admin:
+      title: "Панель администратора"
+      tests: "Список тестов"
+      gists: "GitHub Gists"
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"
+  gist:
+    description: "Вопрос теста \"%{test}\" с сайта Thinknetica TestGuru"
+    answers: "Ответы:"
   title: "TestGuru"
   welcome: "Добро пожаловать, Гуру %{name}!"
   back: "Назад"

@@ -16,6 +16,9 @@ en:
       passed_test:
         one: "Test passage"
         other: "Test passages"
+      gist:
+        one: "GitHub Gist"
+        other: "GitHub Gists"
     attributes:
       test:
         title: "Title"
@@ -36,6 +39,10 @@ en:
         test: "Test"
         correct_questions: "Correct answers"
         question: "Current question"
+      gist:
+        user: "User"
+        question: "Question"
+        url: "URL"
   helpers:
     select:
       prompt: "Please select"
@@ -94,6 +101,13 @@ en:
         success: "Answer successfully created!"
       update:
         success: "Answer successfully updated!"
+    gists:
+      index:
+        header: "GitHub Gists"
+        table:
+          user: "User"
+          question: "Question"
+          url: "URL"
   tests:
     index:
       header: "List of tests"
@@ -111,9 +125,14 @@ en:
       position_of_question:
         one: "The %{position} of %{count} question"
         other: "The %{position} of %{count} questions"
+      create_gist: "Save to GitHub Gist"
     result:
       success: "The \"%{title}\" Test passed successfully!"
       failure: "The \"%{title}\" Test failed!"
+    gist:
+      see: "See"
+      success: "Gist was successfully created! %{link}"
+      failure: "An error occurred while saving gist!"
   shared:
     errors:
       header:
@@ -125,10 +144,16 @@ en:
       author: "Konoplev Roman"
   nav:
     root: "TestGuru"
-    admin: "Admin Panel"
+    admin:
+      title: "Admin Panel"
+      tests: "List of tests"
+      gists: "GitHub Gists"
     logout: "Logout"
     signup: "Signup"
     login: "Login"
+  gist:
+    description: "A question about \"%{test}\" from Thinknetica TestGuru"
+    answers: "Answers:"
   title: "TestGuru"
   welcome: "Welcome, %{name} Guru!"
   back: "Back"
