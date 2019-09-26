@@ -21,10 +21,10 @@ class PassedTestsController < ApplicationController
   def gist
     result = GistQuestionService.new(@passed_test.current_question).call
 
-    if result['html_url'].present?
-      Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result['html_url'])
+    if result.success?
+      Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result.url)
 
-      link = ActionController::Base.helpers.link_to(t('.see'), result['html_url'], target: '_blank')
+      link = ActionController::Base.helpers.link_to(t('.see'), result.url, target: '_blank')
 
       flash.notice = t('.success', link: link)
     else
