@@ -13,13 +13,15 @@
 
     <tbody>
       <%= render @test.questions %>
+    </tbody>
 
+    <tfoot>
       <tr>
         <td colspan="3" class="text-right"><%= link_to t('.add_new_question'), new_admin_test_question_path(@test) %></td>
       </tr>
       <tr>
         <td colspan="3" class="text-right"><%= link_to t('back'), admin_tests_path %></td>
       </tr>
-    </tbody>
+    </tfoot>
   </table>
 </div>

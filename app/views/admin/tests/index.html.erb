@@ -13,10 +13,12 @@
 
     <tbody>
       <%= render @tests %>
+    </tbody>
 
+    <tfoot>
       <tr>
         <td colspan="5" class="text-right"><%= link_to t('.add_new_test'), new_admin_test_path %></td>
       </tr>
-    </tbody>
+    </tfoot>
   </table>
 </div>

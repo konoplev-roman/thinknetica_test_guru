@@ -13,11 +13,13 @@
       <%= render @question.answers %>
     </tbody>
 
-    <tr>
-      <td colspan="3" class="text-right"><%= link_to t('.add_new_answer'), new_admin_question_answer_path(@question) %></td>
-    </tr>
-    <tr>
-      <td colspan="3" class="text-right"><%= link_to t('back'), admin_test_path(@question.test) %></td>
-    </tr>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="text-right"><%= link_to t('.add_new_answer'), new_admin_question_answer_path(@question) %></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-right"><%= link_to t('back'), admin_test_path(@question.test) %></td>
+      </tr>
+    </tfoot>
   </table>
 </div>
