@@ -130,7 +130,8 @@ en:
       success: "The \"%{title}\" Test passed successfully!"
       failure: "The \"%{title}\" Test failed!"
     gist:
-      success: "Gist was successfully created! <a href=\"%{href}\" target=\"_blank\">See</a>"
+      see: "See"
+      success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
   shared:
     errors:

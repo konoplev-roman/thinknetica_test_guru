@@ -24,7 +24,9 @@ class PassedTestsController < ApplicationController
     if result['html_url'].present?
       Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result['html_url'])
 
-      flash.notice = t('.success', href: result['html_url'])
+      link = ActionController::Base.helpers.link_to(t('.see'), result['html_url'], target: '_blank')
+
+      flash.notice = t('.success', link: link)
     else
       flash.alert = t('.failure')
     end

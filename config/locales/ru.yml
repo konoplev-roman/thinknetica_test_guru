@@ -142,7 +142,8 @@ ru:
       success: "Тест \"%{title}\" пройден успешно!"
       failure: "Тест \"%{title}\" провален!"
     gist:
-      success: "Gist успешно сохранен! <a href=\"%{href}\" target=\"_blank\">Посмотреть</a>"
+      see: "Посмотреть"
+      success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
   shared:
     errors:
