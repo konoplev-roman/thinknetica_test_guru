@@ -24,12 +24,12 @@ class PassedTestsController < ApplicationController
     if result['html_url'].present?
       Gist.create(user: @passed_test.user, question: @passed_test.current_question, url: result['html_url'])
 
-      flash_options = { notice: t('.success', href: result['html_url']) }
+      flash.notice = t('.success', href: result['html_url'])
     else
-      flash_options = { alert: t('.failure') }
+      flash.alert = t('.failure')
     end
 
-    redirect_to @passed_test, flash_options
+    redirect_to @passed_test
   end
 
   private
