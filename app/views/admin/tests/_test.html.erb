@@ -1,5 +1,9 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <td>
+    <%= link_to test.title, admin_test_path(test), class: 'title-inline', data: { resource_id: test.id } %>
+    <%= content_tag :span, octicon('pencil', height: 12), class: 'edit-inline', data: { resource_id: test.id } %>
+    <%= render 'from_inline', test: test == @test ? @test : test %>
+  </td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
   <td class="text-right"><%= link_to t('edit'), edit_admin_test_path(test) %></td>
