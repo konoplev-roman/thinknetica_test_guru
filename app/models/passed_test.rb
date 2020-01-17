@@ -27,6 +27,10 @@ class PassedTest < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def progress
+    (position_current_question * 100 / test.questions.count).round(0)
+  end
+
   private
 
   def before_validation_set_question
