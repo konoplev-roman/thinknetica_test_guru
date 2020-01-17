@@ -96,6 +96,8 @@ en:
         success: "Question successfully created!"
       update:
         success: "Question successfully updated!"
+      update_inline:
+        success: "Question successfully updated!"
     answers:
       destroy:
         success: "Answer successfully removed!"

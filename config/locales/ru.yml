@@ -106,6 +106,8 @@ ru:
         success: "Вопрос успешно создан!"
       update:
         success: "Вопрос успешно обновлен!"
+      update_inline:
+        success: "Вопрос успешно обновлен!"
     answers:
       destroy:
         success: "Ответ успешно удален!"
