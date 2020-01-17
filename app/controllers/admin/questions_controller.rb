@@ -1,5 +1,5 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :find_test, only: %i[index new create]
+  before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show destroy edit update update_inline]
 
   def show; end
