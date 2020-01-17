@@ -1,7 +1,7 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
   <h1><%= test_header(@test) %></h1>
 
-  <%= render 'shared/errors', recource: @test %>
+  <%= render 'shared/errors', resource: @test %>
 
   <%= form_with model: [:admin, @test], local: true do |form| %>
     <div class="mb-3">

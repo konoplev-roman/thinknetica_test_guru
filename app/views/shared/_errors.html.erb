@@ -1,8 +1,8 @@
-<% if recource.errors.present? %>
+<% if resource.errors.present? %>
   <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading"><%= t('.header', count: recource.errors.count) %></h4>
+    <h4 class="alert-heading"><%= t('.header', count: resource.errors.count) %></h4>
     <hr>
-    <% recource.errors.full_messages.each do |message| %>
+    <% resource.errors.full_messages.each do |message| %>
       <p><%= message %></p>
     <% end %>
   </div>
