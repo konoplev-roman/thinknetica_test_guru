@@ -32,6 +32,7 @@ gem 'rails-i18n', '~> 5.1'
 
 gem 'jquery-rails', '~> 4.3.5'
 gem 'bootstrap', '~> 4.3.1'
+gem 'octicons_helper', '~> 9.1.1'
 
 gem 'faraday', '~> 0.15.4'
 gem 'octokit', '~> 4.0'
