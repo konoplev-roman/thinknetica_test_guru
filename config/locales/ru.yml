@@ -115,6 +115,8 @@ ru:
         success: "Ответ успешно создан!"
       update:
         success: "Ответ успешно обновлен!"
+      update_inline:
+        success: "Ответ успешно обновлен!"
     gists:
       index:
         header: "GitHub Gists"

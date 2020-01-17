@@ -1,5 +1,9 @@
 <tr>
-  <td><%= answer.body %></td>
+  <td>
+    <%= content_tag :span, answer.body, class: 'title-inline', data: { resource_id: answer.id } %>
+    <%= content_tag :span, octicon('pencil', height: 12), class: 'edit-inline', data: { resource_id: answer.id } %>
+    <%= render 'admin/answers/from_inline', answer: answer == @answer ? @answer : answer %>
+  </td>
   <td class="text-right"><%= link_to t('edit'), edit_admin_answer_path(answer) %></td>
   <td class="text-right"><%= link_to t('delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('are_you_sure') } %></td>
 </tr>

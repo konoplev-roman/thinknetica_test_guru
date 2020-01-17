@@ -105,6 +105,8 @@ en:
         success: "Answer successfully created!"
       update:
         success: "Answer successfully updated!"
+      update_inline:
+        success: "Answer successfully updated!"
     gists:
       index:
         header: "GitHub Gists"
