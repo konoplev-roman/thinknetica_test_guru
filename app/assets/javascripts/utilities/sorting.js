@@ -1,20 +1,20 @@
 document.addEventListener('turbolinks:load', function () {
-    let control = document.querySelector('.sort-by-title');
+    var control = document.querySelector('.sort-by-title');
 
     if (control) { control.addEventListener('click', sortRowsByTitle) }
 });
 
 function sortRowsByTitle() {
-    let arrowUp = this.querySelector('.sort-asc');
-    let arrowDown = this.querySelector('.sort-desc');
+    var arrowUp = this.querySelector('.sort-asc');
+    var arrowDown = this.querySelector('.sort-desc');
 
-    let table = this.parentNode.parentNode.parentNode;
-    let tableBody = table.querySelector('tbody');
+    var table = this.parentNode.parentNode.parentNode;
+    var tableBody = table.querySelector('tbody');
 
-    let rows = tableBody.querySelectorAll('tr');
-    let sortedRows = [];
+    var rows = tableBody.querySelectorAll('tr');
+    var sortedRows = [];
 
-    for (let i = 0; i < rows.length; i++) {
+    for (var i = 0; i < rows.length; i++) {
         sortedRows.push(rows[i])
     }
 
@@ -28,9 +28,9 @@ function sortRowsByTitle() {
         arrowDown.classList.add('sort-active')
     }
 
-    let sortedTableBody = document.createElement('tbody');
+    var sortedTableBody = document.createElement('tbody');
 
-    for (let i = 0; i < sortedRows.length; i++) {
+    for (var i = 0; i < sortedRows.length; i++) {
         sortedTableBody.appendChild(sortedRows[i])
     }
 
@@ -38,8 +38,8 @@ function sortRowsByTitle() {
 }
 
 function compareRowsAsc(row1, row2) {
-    let title1 = row1.querySelector('td').textContent;
-    let title2 = row2.querySelector('td').textContent;
+    var title1 = row1.querySelector('td').textContent;
+    var title2 = row2.querySelector('td').textContent;
 
     if (title1 < title2) { return -1 }
     if (title1 > title2) { return 1 }
@@ -47,8 +47,8 @@ function compareRowsAsc(row1, row2) {
 }
 
 function compareRowsDesc(row1, row2) {
-    let title1 = row1.querySelector('td').textContent;
-    let title2 = row2.querySelector('td').textContent;
+    var title1 = row1.querySelector('td').textContent;
+    var title2 = row2.querySelector('td').textContent;
 
     if (title1 < title2) { return 1 }
     if (title1 > title2) { return -1 }
