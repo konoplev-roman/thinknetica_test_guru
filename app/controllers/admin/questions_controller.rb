@@ -1,6 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show destroy edit update]
+  before_action :find_test, only: %i[new create]
+  before_action :find_question, only: %i[show destroy edit update update_inline]
 
   def show; end
 
@@ -31,6 +31,16 @@ class Admin::QuestionsController < Admin::BaseController
       redirect_to [:admin, @question.test], notice: t('.success')
     else
       render :edit
+    end
+  end
+
+  def update_inline
+    @test = @question.test
+
+    if @question.update(question_params)
+      redirect_to [:admin, @test], notice: t('.success')
+    else
+      render 'admin/tests/show'
     end
   end
 

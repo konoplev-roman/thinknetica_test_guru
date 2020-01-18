@@ -3,7 +3,15 @@
 
   <%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
     <p class="small"><%= t('.description', category: @passed_test.test.category.title, level: test_level(@passed_test.test), author: @passed_test.test.author.first_name) %></p>
-    <p class="small"><%= t('.position_of_question', count: @passed_test.test.questions.count, position: @passed_test.position_current_question) %></p>
+
+    <div class="progress mb-3">
+      <%= content_tag :div,
+          t('.position_of_question', count: @passed_test.test.questions.count, position: @passed_test.position_current_question),
+          class: 'progress-bar', role: 'progressbar',
+          aria: { valuemin: 0, valuemax: 100 },
+          data: { progress: @passed_test.progress }
+      %>
+    </div>
 
     <p><%= @passed_test.current_question.body %></p>
 

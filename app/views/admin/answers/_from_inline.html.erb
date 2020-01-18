@@ -1,0 +1,6 @@
+<%= form_with model: [:admin, answer], url: update_inline_admin_answer_path(answer),
+              class: 'form-inline hide', data: { resource_id: answer.id }, local: true do |form| %>
+  <%= form.text_area :body, id: "answer_body_#{answer.id}", cols: 40, rows: 3, class: 'form-control mr-sm-2' %>
+  <%= form.submit t('ok'), class: 'btn btn-primary mr-sm-2' %>
+  <%= content_tag :span, t('cancel'), class: 'btn btn-secondary mr-sm-2 edit-inline', data: { resource_id: answer.id } %>
+<% end %>

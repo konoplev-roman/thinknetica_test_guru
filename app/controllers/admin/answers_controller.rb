@@ -1,6 +1,6 @@
 class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
-  before_action :find_answer, only: %i[destroy edit update]
+  before_action :find_answer, only: %i[destroy edit update update_inline]
 
   def destroy
     @answer.destroy
@@ -29,6 +29,16 @@ class Admin::AnswersController < Admin::BaseController
       redirect_to [:admin, @answer.question], notice: t('.success')
     else
       render :edit
+    end
+  end
+
+  def update_inline
+    @question = @answer.question
+
+    if @answer.update(answer_params)
+      redirect_to [:admin, @question], notice: t('.success')
+    else
+      render 'admin/questions/show'
     end
   end
 

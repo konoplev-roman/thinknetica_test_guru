@@ -3,6 +3,8 @@
 
   <p class="small"><%= t('.description', category: @test.category.title, level: test_level(@test), author: @test.author.first_name) %></p>
 
+  <%= render 'shared/errors', resource: @question %>
+
   <table class="table">
     <thead>
     <tr>

@@ -82,6 +82,8 @@ en:
         success: "Test successfully created!"
       update:
         success: "Test successfully updated!"
+      update_inline:
+        success: "Test successfully updated!"
     questions:
       show:
         table:
@@ -94,12 +96,16 @@ en:
         success: "Question successfully created!"
       update:
         success: "Question successfully updated!"
+      update_inline:
+        success: "Question successfully updated!"
     answers:
       destroy:
         success: "Answer successfully removed!"
       create:
         success: "Answer successfully created!"
       update:
+        success: "Answer successfully updated!"
+      update_inline:
         success: "Answer successfully updated!"
     gists:
       index:
@@ -162,3 +168,5 @@ en:
   are_you_sure: "Are you sure?"
   record_not_found: "The requested record was not found. You have been redirected to the home page."
   not_authorized: "You are not authorized to view this page!"
+  ok: "Ok"
+  cancel: "Cancel"
