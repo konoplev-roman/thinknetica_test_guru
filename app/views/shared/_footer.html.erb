@@ -1,5 +1,7 @@
 <footer class="my-5 pt-5 text-muted text-center text-small">
   <p>
+    <%= link_to t('.feedback'), new_feedback_path %>
+    <br>
     <%= t('.project_description') %> <%= link_to t('.thinknetica'), 'https://thinknetica.com/', target: '_blank' %>
     <br>
     &copy; <%= year %> <%= t('.author') %> (<%= github_url('konoplev-roman', 'thinknetica_test_guru') %>)

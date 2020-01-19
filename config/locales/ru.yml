@@ -29,6 +29,7 @@ ru:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
+      feedback: "Обратная связь"
     attributes:
       test:
         title: "Название"
@@ -53,12 +54,17 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         url: "URL"
+      feedback:
+        email: "Email"
+        message: "Сообщение"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
     submit:
       create: "Создать"
       update: "Сохранить"
+      feedback:
+        create: "Отправить"
     label:
       test:
         title: "Название"
@@ -69,6 +75,9 @@ ru:
       answer:
         body: "Ответ"
         correct: "Правильный"
+      feedback:
+        email: "Email"
+        message: "Сообщение"
   admin:
     title: "Панель администратора TestGuru"
     tests:
@@ -151,6 +160,11 @@ ru:
       see: "Посмотреть"
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
+  feedbacks:
+    create:
+      success: "Ваше сообщение успешно отправлено!"
+    form:
+      header: "Обратная связь"
   shared:
     errors:
       header:
@@ -162,6 +176,7 @@ ru:
       project_description: "Учебый проект курса \"Основы Rails\" онлайн-школы"
       thinknetica: "Thinknetica"
       author: "Коноплев Роман"
+      feedback: "Обратная связь"
   nav:
     root: "TestGuru"
     admin:
@@ -174,6 +189,9 @@ ru:
   gist:
     description: "Вопрос теста \"%{test}\" с сайта Thinknetica TestGuru"
     answers: "Ответы:"
+  feedback_mailer:
+    leave_message:
+      subject: "Вы получили сообщение с TestGuru!"
   title: "TestGuru"
   welcome: "Добро пожаловать, Гуру %{name}!"
   back: "Назад"
