@@ -1,5 +1,5 @@
 class FeedbackMailer < ApplicationMailer
-  default to: ENV['ADMIN_EMAIL']
+  default to: ENV['FEEDBACK_EMAIL']
 
   def leave_message(feedback)
     @email = feedback.email
