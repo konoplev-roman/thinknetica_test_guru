@@ -1,9 +1,9 @@
 module AnswerHelper
   def answer_header(answer)
     if answer.new_record?
-      'Create New Answer'
+      t('helpers.answer.header.create')
     else
-      'Edit Answer'
+      t('helpers.answer.header.edit')
     end
   end
 end

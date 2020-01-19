@@ -71,6 +71,18 @@ en:
       feedback:
         email: "Email"
         message: "Message"
+    test:
+      header:
+        create: "Create new test"
+        edit: "Edit test \"%{title}\""
+    question:
+      header:
+        create: "Create new question for the test \"%{title}\""
+        edit: "Edit question for the test \"%{title}\""
+    answer:
+      header:
+        create: "Create new answer"
+        edit: "Edit answer"
   admin:
     title: "TestGuru Admin Panel"
     tests:

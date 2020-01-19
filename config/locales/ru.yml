@@ -81,6 +81,18 @@ ru:
       feedback:
         email: "Email"
         message: "Сообщение"
+    test:
+      header:
+        create: "Создание нового теста"
+        edit: "Редактирование теста \"%{title}\""
+    question:
+      header:
+        create: "Создание нового вопроса для теста \"%{title}\""
+        edit: "Редактирование вопроса из теста \"%{title}\""
+    answer:
+      header:
+        create: "Создание нового ответа на вопрос"
+        edit: "Редактирование ответа на вопрос"
   admin:
     title: "Панель администратора TestGuru"
     tests:
