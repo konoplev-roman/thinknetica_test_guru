@@ -1,4 +1,11 @@
 en:
+  activemodel:
+    models:
+      feedback: "Feedback"
+    attributes:
+      feedback:
+        email: "Email"
+        message: "Message"
   activerecord:
     models:
       test:
@@ -49,6 +56,8 @@ en:
     submit:
       create: "Create"
       update: "Update"
+      feedback:
+        create: "Send"
     label:
       test:
         title: "Title"
@@ -59,6 +68,21 @@ en:
       answer:
         body: "Answer"
         correct: "Correct"
+      feedback:
+        email: "Email"
+        message: "Message"
+    test:
+      header:
+        create: "Create new test"
+        edit: "Edit test \"%{title}\""
+    question:
+      header:
+        create: "Create new question for the test \"%{title}\""
+        edit: "Edit question for the test \"%{title}\""
+    answer:
+      header:
+        create: "Create new answer"
+        edit: "Edit answer"
   admin:
     title: "TestGuru Admin Panel"
     tests:
@@ -139,6 +163,11 @@ en:
       see: "See"
       success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
+  feedbacks:
+    create:
+      success: "Your message was sent successfully!"
+    form:
+      header: "Feedback"
   shared:
     errors:
       header:
@@ -148,6 +177,7 @@ en:
       project_description: "Training project of the course \"Basics of Rails\" from online school"
       thinknetica: "Thinknetica"
       author: "Konoplev Roman"
+      feedback: "Feedback"
   nav:
     root: "TestGuru"
     admin:
@@ -160,6 +190,12 @@ en:
   gist:
     description: "A question about \"%{test}\" from Thinknetica TestGuru"
     answers: "Answers:"
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+  feedback_mailer:
+    leave_message:
+      subject: "You have a message from TestGuru!"
   title: "TestGuru"
   welcome: "Welcome, %{name} Guru!"
   back: "Back"

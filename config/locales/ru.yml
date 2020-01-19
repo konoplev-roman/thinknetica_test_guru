@@ -1,4 +1,11 @@
 ru:
+  activemodel:
+    models:
+      feedback: "Обратная связь"
+    attributes:
+      feedback:
+        email: "Email"
+        message: "Сообщение"
   activerecord:
     models:
       test:
@@ -59,6 +66,8 @@ ru:
     submit:
       create: "Создать"
       update: "Сохранить"
+      feedback:
+        create: "Отправить"
     label:
       test:
         title: "Название"
@@ -69,6 +78,21 @@ ru:
       answer:
         body: "Ответ"
         correct: "Правильный"
+      feedback:
+        email: "Email"
+        message: "Сообщение"
+    test:
+      header:
+        create: "Создание нового теста"
+        edit: "Редактирование теста \"%{title}\""
+    question:
+      header:
+        create: "Создание нового вопроса для теста \"%{title}\""
+        edit: "Редактирование вопроса из теста \"%{title}\""
+    answer:
+      header:
+        create: "Создание нового ответа на вопрос"
+        edit: "Редактирование ответа на вопрос"
   admin:
     title: "Панель администратора TestGuru"
     tests:
@@ -151,10 +175,15 @@ ru:
       see: "Посмотреть"
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
+  feedbacks:
+    create:
+      success: "Ваше сообщение успешно отправлено!"
+    form:
+      header: "Обратная связь"
   shared:
     errors:
       header:
-        few: "Обнаружена %{count} ошибки!"
+        few: "Обнаружено %{count} ошибки!"
         many: "Обнаружена %{count} ошибок!"
         one: "Обнаружена %{count} ошибка!"
         other: "Обнаружена %{count} ошибка!"
@@ -162,6 +191,7 @@ ru:
       project_description: "Учебый проект курса \"Основы Rails\" онлайн-школы"
       thinknetica: "Thinknetica"
       author: "Коноплев Роман"
+      feedback: "Обратная связь"
   nav:
     root: "TestGuru"
     admin:
@@ -174,6 +204,12 @@ ru:
   gist:
     description: "Вопрос теста \"%{test}\" с сайта Thinknetica TestGuru"
     answers: "Ответы:"
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что завершили тест TestGuru!"
+  feedback_mailer:
+    leave_message:
+      subject: "Вы получили сообщение с TestGuru!"
   title: "TestGuru"
   welcome: "Добро пожаловать, Гуру %{name}!"
   back: "Назад"
