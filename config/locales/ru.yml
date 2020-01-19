@@ -1,4 +1,11 @@
 ru:
+  activemodel:
+    models:
+      feedback: "Обратная связь"
+    attributes:
+      feedback:
+        email: "Email"
+        message: "Сообщение"
   activerecord:
     models:
       test:
@@ -29,7 +36,6 @@ ru:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
-      feedback: "Обратная связь"
     attributes:
       test:
         title: "Название"
@@ -54,9 +60,6 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         url: "URL"
-      feedback:
-        email: "Email"
-        message: "Сообщение"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"

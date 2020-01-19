@@ -1,4 +1,11 @@
 en:
+  activemodel:
+    models:
+      feedback: "Feedback"
+    attributes:
+      feedback:
+        email: "Email"
+        message: "Message"
   activerecord:
     models:
       test:
@@ -19,7 +26,6 @@ en:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
-      feedback: "Feedback"
     attributes:
       test:
         title: "Title"
@@ -44,9 +50,6 @@ en:
         user: "User"
         question: "Question"
         url: "URL"
-      feedback:
-        email: "Email"
-        message: "Message"
   helpers:
     select:
       prompt: "Please select"
