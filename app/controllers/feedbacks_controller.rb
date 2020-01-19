@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
     if @feedback.valid?
       FeedbackMailer.leave_message(@feedback).deliver_now
 
-      redirect_to root_path, notice: t('.success')
+      redirect_to new_feedback_path, notice: t('.success')
     else
       render :new
     end
