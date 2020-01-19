@@ -175,6 +175,9 @@ en:
   gist:
     description: "A question about \"%{test}\" from Thinknetica TestGuru"
     answers: "Answers:"
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
   feedback_mailer:
     leave_message:
       subject: "You have a message from TestGuru!"

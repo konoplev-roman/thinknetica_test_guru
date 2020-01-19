@@ -189,6 +189,9 @@ ru:
   gist:
     description: "Вопрос теста \"%{test}\" с сайта Thinknetica TestGuru"
     answers: "Ответы:"
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что завершили тест TestGuru!"
   feedback_mailer:
     leave_message:
       subject: "Вы получили сообщение с TestGuru!"
