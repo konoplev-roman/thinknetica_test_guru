@@ -42,6 +42,8 @@ ru:
         level: "Уровень"
         category: "Категория"
         author: "Автор"
+        has_timer: "Наличие таймера"
+        time_limit: "Ограничение по времени"
       question:
         body: "Вопрос"
         test: "Тест"
@@ -73,6 +75,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        has_timer: "Наличие таймера"
+        time_limit: "мин."
       question:
         body: "Вопрос"
       answer:
