@@ -34,9 +34,13 @@ function timerHandler(timer) {
         minutesFiled.innerHTML = minutes;
         secondsFiled.innerHTML = seconds;
 
+        timer.classList.remove('hide');
+
         // If the count down is finished, redirect
         if (count < 0) {
             clearInterval(countdown);
+
+            timer.classList.add('hide');
 
             form.submit();
         }

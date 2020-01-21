@@ -14,7 +14,7 @@
     </div>
 
     <% if @passed_test.timer? %>
-      <%= content_tag :p, id: 'timer', class: 'small', data: { complete_before: @passed_test.complete_before.iso8601 } do %>
+      <%= content_tag :p, id: 'timer', class: 'small hide', data: { complete_before: @passed_test.complete_before.iso8601 } do %>
         <%= t('.time_left') %>
         <span id="days"></span><%= t('.day') %>
         <span id="hours"></span><%= t('.hour') %>
