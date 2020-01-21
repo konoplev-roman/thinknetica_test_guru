@@ -7,6 +7,7 @@ class PassedTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.current_question = nil if time_expired?
 
     save!
   end
@@ -31,6 +32,22 @@ class PassedTest < ApplicationRecord
     (position_current_question * 100 / test.questions.count).round(0)
   end
 
+  def timer?
+    test.timer?
+  end
+
+  def complete_before
+    return unless timer?
+    return if new_record?
+
+    created_at + test.time_limit.minutes
+  end
+
+  def time_expired?
+    # If the timer is not set the pass test time never expires
+    timer? && Time.now > complete_before
+  end
+
   private
 
   def before_validation_set_question
@@ -38,7 +55,7 @@ class PassedTest < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
+    current_question? && correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
@@ -48,8 +65,16 @@ class PassedTest < ApplicationRecord
   def next_question
     if new_record?
       test.questions.first
-    else
+    elsif current_question?
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def current_question?
+    !!current_question
+  end
+
+  def time_left?
+    !time_expired?
   end
 end

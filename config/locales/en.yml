@@ -32,6 +32,8 @@ en:
         level: "Level"
         category: "Category"
         author: "Author"
+        has_timer: "Has timer"
+        time_limit: "Time limit"
       question:
         body: "Question"
         test: "Test"
@@ -63,6 +65,8 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        has_timer: "Has timer"
+        time_limit: "min."
       question:
         body: "Question"
       answer:
@@ -156,6 +160,11 @@ en:
         one: "The %{position} of %{count} question"
         other: "The %{position} of %{count} questions"
       create_gist: "Save to GitHub Gist"
+      time_left: "There is time left to pass the test:"
+      day: "d"
+      hour: "h"
+      min: "m"
+      sec: "s"
     result:
       success: "The \"%{title}\" Test passed successfully!"
       failure: "The \"%{title}\" Test failed!"
@@ -163,6 +172,7 @@ en:
       see: "See"
       success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
+    time_expired: "Time has expired!"
   feedbacks:
     create:
       success: "Your message was sent successfully!"

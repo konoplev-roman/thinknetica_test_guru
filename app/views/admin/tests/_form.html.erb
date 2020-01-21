@@ -19,6 +19,26 @@
       <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: true, id: :test_category_id }, { class: 'form-control' } %>
     </div>
 
+    <div class="mb-3">
+      <%= form.label :has_timer %>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <%= form.check_box :has_timer, id: :test_has_timer %>
+          </div>
+        </div>
+
+        <%= form.number_field :time_limit, id: :test_time_limit, class: 'form-control' %>
+
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <%= form.label :time_limit, class: 'mb-0' %>
+          </span>
+        </div>
+      </div>
+    </div>
+
     <hr class="mb-4">
 
     <div class="d-flex bd-highlight mb-3">

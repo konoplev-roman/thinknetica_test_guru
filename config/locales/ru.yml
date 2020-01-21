@@ -42,6 +42,8 @@ ru:
         level: "Уровень"
         category: "Категория"
         author: "Автор"
+        has_timer: "Наличие таймера"
+        time_limit: "Ограничение по времени"
       question:
         body: "Вопрос"
         test: "Тест"
@@ -73,6 +75,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        has_timer: "Наличие таймера"
+        time_limit: "мин."
       question:
         body: "Вопрос"
       answer:
@@ -168,6 +172,11 @@ ru:
         one: "%{position} из %{count} вопроса"
         other: "%{position} из %{count} вопроса"
       create_gist: "Сохранить в GitHub Gist"
+      time_left: "На прохождение теста осталось:"
+      day: "д"
+      hour: "ч"
+      min: "м"
+      sec: "с"
     result:
       success: "Тест \"%{title}\" пройден успешно!"
       failure: "Тест \"%{title}\" провален!"
@@ -175,6 +184,7 @@ ru:
       see: "Посмотреть"
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
+    time_expired: "Время истекло!"
   feedbacks:
     create:
       success: "Ваше сообщение успешно отправлено!"
