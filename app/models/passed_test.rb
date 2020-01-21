@@ -43,6 +43,11 @@ class PassedTest < ApplicationRecord
     created_at + test.time_limit.minutes
   end
 
+  def time_expired?
+    # If the timer is not set the pass test time never expires
+    timer? && Time.now > complete_before
+  end
+
   private
 
   def before_validation_set_question
@@ -67,11 +72,6 @@ class PassedTest < ApplicationRecord
 
   def current_question?
     !!current_question
-  end
-
-  def time_expired?
-    # If the timer is not set the pass test time never expires
-    timer? && Time.now > complete_before
   end
 
   def time_left?

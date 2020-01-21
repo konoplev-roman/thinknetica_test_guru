@@ -13,6 +13,8 @@ class PassedTestsController < ApplicationController
     if @passed_test.complited?
       TestsMailer.completed_test(@passed_test).deliver_now
 
+      flash.alert = t('.time_expired') if @passed_test.time_expired?
+
       redirect_to result_passed_test_path(@passed_test)
     else
       render :show
