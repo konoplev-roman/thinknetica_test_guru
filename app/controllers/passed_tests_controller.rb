@@ -1,6 +1,7 @@
 class PassedTestsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_passed_test, only: %i[show result update gist]
+  before_action :check_timer!, only: %i[show update]
 
   def show; end
 
@@ -38,5 +39,13 @@ class PassedTestsController < ApplicationController
 
   def find_passed_test
     @passed_test = PassedTest.find(params[:id])
+  end
+
+  def check_timer!
+    return if @passed_test.time_left?
+
+    flash.alert = t('.time_expired')
+
+    redirect_to result_passed_test_path(@passed_test)
   end
 end

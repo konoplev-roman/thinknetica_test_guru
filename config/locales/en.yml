@@ -167,6 +167,7 @@ en:
       see: "See"
       success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
+    time_expired: "Time has expired!"
   feedbacks:
     create:
       success: "Your message was sent successfully!"

@@ -6,17 +6,17 @@ class PassedTest < ApplicationRecord
   before_validation :before_validation_set_question, on: %i[create update]
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if time_left? && correct_answer?(answer_ids)
 
     save!
   end
 
   def complited?
-    current_question.nil?
+    current_question.nil? || time_expired?
   end
 
   def success?
-    success_percent >= 85
+    success_percent >= 85 && time_left?
   end
 
   def success_percent
@@ -29,6 +29,25 @@ class PassedTest < ApplicationRecord
 
   def progress
     (position_current_question * 100 / test.questions.count).round(0)
+  end
+
+  def timer?
+    test.timer?
+  end
+
+  def complete_before
+    return unless timer?
+    return if new_record?
+
+    created_at + test.time_limit.minutes
+  end
+
+  def time_expired?
+    complete_before ? Time.now > complete_before : false
+  end
+
+  def time_left?
+    !time_expired?
   end
 
   private

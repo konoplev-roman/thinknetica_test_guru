@@ -179,6 +179,7 @@ ru:
       see: "Посмотреть"
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
+    time_expired: "Время истекло!"
   feedbacks:
     create:
       success: "Ваше сообщение успешно отправлено!"
