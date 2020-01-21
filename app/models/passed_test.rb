@@ -43,10 +43,8 @@ class PassedTest < ApplicationRecord
   end
 
   def time_expired?
-    # If the time limit is not set (and complete_before is nil) the pass test time never expires
-    return false unless complete_before
-
-    Time.now > complete_before
+    # If the timer is not set the pass test time never expires
+    timer? && Time.now > complete_before
   end
 
   def time_left?
