@@ -12,7 +12,7 @@ class PassedTest < ApplicationRecord
   end
 
   def complited?
-    current_question.nil? || time_expired?
+    current_question.nil?
   end
 
   def success?
@@ -56,7 +56,7 @@ class PassedTest < ApplicationRecord
   private
 
   def before_validation_set_question
-    self.current_question = next_question
+    self.current_question = time_expired? ? nil : next_question
   end
 
   def correct_answer?(answer_ids)
