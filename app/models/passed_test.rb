@@ -58,7 +58,7 @@ class PassedTest < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
+    current_question? && correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
@@ -68,8 +68,12 @@ class PassedTest < ApplicationRecord
   def next_question
     if new_record?
       test.questions.first
-    else
+    elsif current_question?
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def current_question?
+    !!current_question
   end
 end
