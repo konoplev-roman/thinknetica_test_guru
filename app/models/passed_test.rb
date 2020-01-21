@@ -6,7 +6,8 @@ class PassedTest < ApplicationRecord
   before_validation :before_validation_set_question, on: %i[create update]
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if time_left? && correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.current_question = nil if time_expired?
 
     save!
   end
@@ -54,7 +55,7 @@ class PassedTest < ApplicationRecord
   private
 
   def before_validation_set_question
-    self.current_question = time_expired? ? nil : next_question
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
