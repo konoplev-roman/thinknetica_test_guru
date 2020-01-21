@@ -11,7 +11,7 @@ function timerHandler(timer) {
     var dayMs = hourMs * 24;
 
     var completeBefore = new Date(timer.dataset.completeBefore).getTime();
-    var redirect = timer.dataset.redirect;
+    var form = document.querySelector('#form');
 
     var daysFiled = document.querySelector('#days');
     var hoursFiled = document.querySelector('#hours');
@@ -38,7 +38,7 @@ function timerHandler(timer) {
         if (count < 0) {
             clearInterval(countdown);
 
-            window.location.href = redirect;
+            form.submit();
         }
     }, 1000);
 }
