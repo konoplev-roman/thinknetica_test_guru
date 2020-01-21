@@ -17,7 +17,7 @@ class PassedTest < ApplicationRecord
   end
 
   def success?
-    success_percent >= 85 && time_left?
+    success_percent >= 85
   end
 
   def success_percent
