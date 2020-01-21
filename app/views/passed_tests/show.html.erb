@@ -13,6 +13,16 @@
       %>
     </div>
 
+    <% if @passed_test.timer? %>
+      <%= content_tag :p, id: 'timer', class: 'small', data: { complete_before: @passed_test.complete_before.iso8601, redirect: result_passed_test_path(@passed_test) } do %>
+        <%= t('.time_left') %>
+        <span id="days"></span><%= t('.day') %>
+        <span id="hours"></span><%= t('.hour') %>
+        <span id="minutes"></span><%= t('.min') %>
+        <span id="seconds"></span><%= t('.sec') %>
+      <% end %>
+    <% end %>
+
     <p><%= @passed_test.current_question.body %></p>
 
     <%= form.collection_check_boxes :answer_ids, @passed_test.current_question.answers, :id, :body, include_hidden: false do |c| %>

@@ -172,6 +172,11 @@ ru:
         one: "%{position} из %{count} вопроса"
         other: "%{position} из %{count} вопроса"
       create_gist: "Сохранить в GitHub Gist"
+      time_left: "На прохождение теста осталось:"
+      day: "д"
+      hour: "ч"
+      min: "м"
+      sec: "с"
     result:
       success: "Тест \"%{title}\" пройден успешно!"
       failure: "Тест \"%{title}\" провален!"

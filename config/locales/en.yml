@@ -160,6 +160,11 @@ en:
         one: "The %{position} of %{count} question"
         other: "The %{position} of %{count} questions"
       create_gist: "Save to GitHub Gist"
+      time_left: "There is time left to pass the test:"
+      day: "d"
+      hour: "h"
+      min: "m"
+      sec: "s"
     result:
       success: "The \"%{title}\" Test passed successfully!"
       failure: "The \"%{title}\" Test failed!"
