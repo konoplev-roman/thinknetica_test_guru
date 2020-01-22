@@ -30,5 +30,9 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+
+    resources :badges, except: :show do
+      patch :update_inline, on: :member
+    end
   end
 end

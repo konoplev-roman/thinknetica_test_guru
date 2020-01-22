@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <%= content_tag :span, badge.title, class: 'title-inline', data: { resource_id: badge.id } %>
+    <%= content_tag :span, octicon('pencil', height: 12), class: 'edit-inline', data: { resource_id: badge.id } %>
+    <%= render 'from_inline', badge: badge == @badge ? @badge : badge %>
+  </td>
+  <td><%= badge.condition %></td>
+  <td class="text-right"><%= link_to t('edit'), edit_admin_badge_path(badge) %></td>
+  <td class="text-right"><%= link_to t('delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('are_you_sure') } %></td>
+</tr>

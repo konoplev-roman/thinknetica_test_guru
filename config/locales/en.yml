@@ -26,6 +26,9 @@ en:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
+      badge:
+        one: "Badge"
+        other: "Badges"
     attributes:
       test:
         title: "Title"
@@ -52,6 +55,11 @@ en:
         user: "User"
         question: "Question"
         url: "URL"
+      badge:
+        title: "Title"
+        image: "Image"
+        condition: "Condition for getting"
+        target: "Target"
   helpers:
     select:
       prompt: "Please select"
@@ -75,6 +83,11 @@ en:
       feedback:
         email: "Email"
         message: "Message"
+      badge:
+        title: "Title"
+        image: "Image"
+        condition: "Condition for getting"
+        target: "Target"
     test:
       header:
         create: "Create new test"
@@ -87,6 +100,10 @@ en:
       header:
         create: "Create new answer"
         edit: "Edit answer"
+    badge:
+      header:
+        create: "Create new badge"
+        edit: "Edit badge \"%{title}\""
   admin:
     title: "TestGuru Admin Panel"
     tests:
@@ -142,6 +159,22 @@ en:
           user: "User"
           question: "Question"
           url: "URL"
+    badges:
+      index:
+        header: "Badges"
+        table:
+          title: "Title"
+          condition: "Condition for getting"
+          actions: "Actions"
+        add_new_badge: "Add new badge"
+      destroy:
+        success: "Badge successfully removed!"
+      create:
+        success: "Badge successfully created!"
+      update:
+        success: "Badge successfully updated!"
+      update_inline:
+        success: "Badge successfully updated!"
   tests:
     index:
       header: "List of tests"
@@ -194,6 +227,7 @@ en:
       title: "Admin Panel"
       tests: "List of tests"
       gists: "GitHub Gists"
+      badges: "Badges"
     logout: "Logout"
     signup: "Signup"
     login: "Login"

@@ -36,6 +36,11 @@ ru:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
+      badge:
+        few: "Бейджа"
+        many: "Бейджей"
+        one: "Бейдж"
+        other: "Бейджи"
     attributes:
       test:
         title: "Название"
@@ -62,6 +67,11 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         url: "URL"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        condition: "Условие получения"
+        target: "Цель"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -85,6 +95,11 @@ ru:
       feedback:
         email: "Email"
         message: "Сообщение"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        condition: "Условие получения"
+        target: "Цель"
     test:
       header:
         create: "Создание нового теста"
@@ -97,6 +112,10 @@ ru:
       header:
         create: "Создание нового ответа на вопрос"
         edit: "Редактирование ответа на вопрос"
+    badge:
+      header:
+        create: "Создание нового бейджа"
+        edit: "Редактирование бейджа \"%{title}\""
   admin:
     title: "Панель администратора TestGuru"
     tests:
@@ -152,6 +171,22 @@ ru:
           user: "Пользователь"
           question: "Вопрос"
           url: "URL"
+    badges:
+      index:
+        header: "Бэйджи"
+        table:
+          title: "Название"
+          condition: "Условие получения"
+          actions: "Действия"
+        add_new_badge: "Добавить новый бейдж"
+      destroy:
+        success: "Бэйдж успешно удален!"
+      create:
+        success: "Бэйдж успешно создан!"
+      update:
+        success: "Бэйдж успешно обновлен!"
+      update_inline:
+        success: "Бэйдж успешно обновлен!"
   tests:
     index:
       header: "Список тестов"
@@ -208,6 +243,7 @@ ru:
       title: "Панель администратора"
       tests: "Список тестов"
       gists: "GitHub Gists"
+      badges: "Бэйджи"
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"
