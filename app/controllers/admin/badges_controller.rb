@@ -1,6 +1,7 @@
 class Admin::BadgesController < Admin::BaseController
   before_action :set_badges, only: %i[index update_inline]
   before_action :find_badge, only: %i[destroy edit update update_inline]
+  before_action :set_images, only: %i[new create edit update]
 
   def index; end
 
@@ -54,5 +55,9 @@ class Admin::BadgesController < Admin::BaseController
 
   def badge_params
     params.require(:badge).permit(:title, :image, :condition, :target)
+  end
+
+  def set_images
+    @images = Dir.glob('app/assets/images/badges/*.png').map { |path| "badges/#{File.basename(path)}" }
   end
 end

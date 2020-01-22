@@ -163,6 +163,7 @@ en:
       index:
         header: "Badges"
         table:
+          image: "Image"
           title: "Title"
           condition: "Condition for getting"
           actions: "Actions"

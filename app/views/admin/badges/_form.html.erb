@@ -11,7 +11,17 @@
 
     <div class="mb-3">
       <%= form.label :image %>
-      <%= form.text_field :image, id: :badge_image, class: 'form-control' %>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+      <% @images.each_with_index do |image, i| %>
+        <div class="col-sm-2">
+          <div class="custom-control custom-radio mb-3">
+            <%= form.radio_button :image, image, id: "badge_#{i}", class: 'custom-control-input' %>
+            <%= form.label i, image_tag(image, class: 'img-thumbnail rounded', size: 100), class: 'custom-control-label' %>
+          </div>
+        </div>
+      <% end %>
     </div>
 
     <div class="mb-3">

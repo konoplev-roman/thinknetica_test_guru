@@ -175,6 +175,7 @@ ru:
       index:
         header: "Бэйджи"
         table:
+          image: "Изображение"
           title: "Название"
           condition: "Условие получения"
           actions: "Действия"
