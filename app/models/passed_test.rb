@@ -20,6 +20,10 @@ class PassedTest < ApplicationRecord
     success_percent >= 85
   end
 
+  def without_errors?
+    correct_questions == test.questions.count
+  end
+
   def success_percent
     (correct_questions.to_f * 100 / test.questions.count).round(0)
   end

@@ -24,6 +24,10 @@ class Test < ApplicationRecord
     by_category(category).sort_by_title.pluck(:title)
   end
 
+  def self.ids_by_level(level)
+    level(level).distinct.order(id: :asc).pluck(:id)
+  end
+
   def timer?
     has_timer
   end

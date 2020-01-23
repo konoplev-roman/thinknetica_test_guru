@@ -11,6 +11,8 @@ class PassedTestsController < ApplicationController
     @passed_test.accept!(params[:answer_ids])
 
     if @passed_test.complited?
+      current_user.badges << AchievementService.new(@passed_test).call
+
       TestsMailer.completed_test(@passed_test).deliver_now
 
       flash.alert = t('.time_expired') if @passed_test.time_expired?
