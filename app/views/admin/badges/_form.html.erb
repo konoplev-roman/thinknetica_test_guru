@@ -26,7 +26,7 @@
 
     <div class="mb-3">
       <%= form.label :condition %>
-      <%= form.text_field :condition, id: :badge_condition, class: 'form-control' %>
+      <%= form.select(:condition, AchievementService::CONDITIONS.map { |c| [condition_title(c), c] }, { prompt: true }, { class: 'form-control' }) %>
     </div>
 
     <div class="mb-3">

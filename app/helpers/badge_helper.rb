@@ -6,4 +6,8 @@ module BadgeHelper
       t('helpers.badge.header.edit', title: badge.title)
     end
   end
+
+  def condition_title(condition)
+    t("helpers.badge.conditions.#{condition}")
+  end
 end

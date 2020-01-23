@@ -104,6 +104,12 @@ en:
       header:
         create: "Create new badge"
         edit: "Edit badge \"%{title}\""
+      conditions:
+        success_by_category: "successfully passed all tests from category"
+        success_by_level: "successfully passed all tests from level"
+        success_first_attempt: "successfully passed on the first attempt the test"
+        without_errors: "successfully passed without errors the test"
+        all_achievements: "received all achievements"
   admin:
     title: "TestGuru Admin Panel"
     tests:

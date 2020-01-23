@@ -116,6 +116,12 @@ ru:
       header:
         create: "Создание нового бейджа"
         edit: "Редактирование бейджа \"%{title}\""
+      conditions:
+        success_by_category: "успешно пройдены все тесты из категории"
+        success_by_level: "успешно пройдены все тесты уровня"
+        success_first_attempt: "успешно пройден с первой попытки тест"
+        without_errors: "успешно пройден без ошибок тест"
+        all_achievements: "получены все остальные достижения"
   admin:
     title: "Панель администратора TestGuru"
     tests:

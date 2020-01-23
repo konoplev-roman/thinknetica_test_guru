@@ -4,7 +4,7 @@ class Badge < ApplicationRecord
 
   validates :title, :condition, :image, presence: true
   validates :target, numericality: { only_integer: true, greater_than: 0 }, allow_nil: true
-  validates :condition, uniqueness: { scope: :target }
+  validates :condition, uniqueness: { scope: :target }, inclusion: { in: AchievementService::CONDITIONS }
 
   scope :target, ->(target) { where(target: target) }
 end
