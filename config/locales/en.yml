@@ -109,6 +109,7 @@ en:
         success_by_level: "successfully passed all tests from level"
         success_first_attempt: "successfully passed on the first attempt the test"
         without_errors: "successfully passed without errors the test"
+        success_all_tests: "successfully passed all tests"
         all_achievements: "received all achievements"
   admin:
     title: "TestGuru Admin Panel"

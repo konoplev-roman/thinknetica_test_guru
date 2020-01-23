@@ -7,6 +7,7 @@ class AchievementService
   ].freeze
 
   CONDITIONS_WITHOUT_TARGET = %w[
+    success_all_tests
     all_achievements
   ].freeze
 

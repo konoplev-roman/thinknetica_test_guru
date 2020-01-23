@@ -121,6 +121,7 @@ ru:
         success_by_level: "успешно пройдены все тесты уровня"
         success_first_attempt: "успешно пройден с первой попытки тест"
         without_errors: "успешно пройден без ошибок тест"
+        success_all_tests: "успешно пройдены все тесты"
         all_achievements: "получены все остальные достижения"
   admin:
     title: "Панель администратора TestGuru"
