@@ -10,4 +10,8 @@ module BadgeHelper
   def condition_title(condition)
     t("helpers.badge.conditions.#{condition}")
   end
+
+  def conditions_list
+    AchievementService::CONDITIONS.map { |c| [condition_title(c), c] }
+  end
 end
