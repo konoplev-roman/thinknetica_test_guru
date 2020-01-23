@@ -183,6 +183,10 @@ en:
         success: "Badge successfully updated!"
       update_inline:
         success: "Badge successfully updated!"
+      form:
+        prompt_category: "Please select category"
+        prompt_test: "Please select test"
+        prompt_level: "Please select level"
   tests:
     index:
       header: "List of tests"

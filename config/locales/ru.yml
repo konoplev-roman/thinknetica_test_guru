@@ -195,6 +195,10 @@ ru:
         success: "Бэйдж успешно обновлен!"
       update_inline:
         success: "Бэйдж успешно обновлен!"
+      form:
+        prompt_category: "Пожалуйста, выберите категорию"
+        prompt_test: "Пожалуйста, выберите тест"
+        prompt_level: "Пожалуйста, выберите уровень сложности"
   tests:
     index:
       header: "Список тестов"

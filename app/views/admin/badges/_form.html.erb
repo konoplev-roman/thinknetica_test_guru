@@ -30,9 +30,18 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :target %>
-      <%= form.number_field :target, id: :badge_target, class: 'form-control' %>
+      <%= form.collection_select :target, Category.all, :id, :title, { prompt: t('.prompt_category') }, { class: 'form-control select-target success_by_category', disabled: true, id: :target_category } %>
     </div>
+
+    <div class="mb-3">
+      <%= form.collection_select :target, Test.all, :id, :title, { prompt: t('.prompt_test') }, { class: 'form-control select-target success_first_attempt without_errors', disabled: true, id: :target_test } %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.number_field :target, class: 'form-control select-target success_by_level', disabled: true, id: :target_level, placeholder: t('.prompt_level') %>
+    </div>
+
+    <%= form.hidden_field(:target, class: 'select-target', disabled: true, id: :target_empty) %>
 
     <hr class="mb-4">
 
