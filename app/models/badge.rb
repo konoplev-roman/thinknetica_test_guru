@@ -9,6 +9,10 @@ class Badge < ApplicationRecord
 
   scope :target, ->(target) { where(target: target) }
 
+  def self.uniq_ids
+    distinct.order(id: :asc).pluck(:id)
+  end
+
   def need_target?
     AchievementService::CONDITIONS_WITHOUT_TARGET.include?(condition)
   end
