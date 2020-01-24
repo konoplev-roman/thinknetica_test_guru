@@ -8,7 +8,7 @@ class PassedTest < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = nil if time_expired?
-    self.percent_correct = (correct_questions.to_f * 100 / test.questions.count).round(0)
+    self.percent_correct = (correct_questions.to_f * 100 / test.questions.count).floor
 
     save!
   end
