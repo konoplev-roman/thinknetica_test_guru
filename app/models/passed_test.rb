@@ -22,7 +22,7 @@ class PassedTest < ApplicationRecord
   end
 
   def without_errors?
-    correct_questions == test.questions.count
+    percent_correct == 100
   end
 
   def position_current_question
