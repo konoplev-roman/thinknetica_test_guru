@@ -29,10 +29,10 @@ function timerHandler(timer) {
         var minutes = Math.floor((count % hourMs) / minMs);
         var seconds = Math.floor((count % minMs) / secMs);
 
-        daysFiled.innerHTML = days;
-        hoursFiled.innerHTML = hours;
-        minutesFiled.innerHTML = minutes;
-        secondsFiled.innerHTML = seconds;
+        daysFiled.innerHTML = days.toString();
+        hoursFiled.innerHTML = hours.toString();
+        minutesFiled.innerHTML = minutes.toString();
+        secondsFiled.innerHTML = seconds.toString();
 
         timer.classList.remove('hide');
 
