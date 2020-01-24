@@ -1,7 +1,7 @@
 class PassedTestsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_passed_test, only: %i[show result update gist]
-  before_action :check_complited!, only: %i[show update]
+  before_action :check_completed!, only: %i[show update]
 
   def show; end
 
@@ -10,7 +10,7 @@ class PassedTestsController < ApplicationController
   def update
     @passed_test.accept!(params[:answer_ids])
 
-    if @passed_test.complited?
+    if @passed_test.completed?
       current_user.badges << AchievementService.new(@passed_test).call
 
       TestsMailer.completed_test(@passed_test).deliver_now
@@ -45,7 +45,7 @@ class PassedTestsController < ApplicationController
     @passed_test = PassedTest.find(params[:id])
   end
 
-  def check_complited!
-    redirect_to result_passed_test_path(@passed_test) if @passed_test.complited?
+  def check_completed!
+    redirect_to result_passed_test_path(@passed_test) if @passed_test.completed?
   end
 end
