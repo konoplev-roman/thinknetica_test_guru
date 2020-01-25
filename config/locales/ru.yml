@@ -232,6 +232,9 @@ ru:
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
     time_expired: "Время истекло!"
+  achievements:
+    index:
+      header: "Достижения"
   feedbacks:
     create:
       success: "Ваше сообщение успешно отправлено!"
@@ -256,6 +259,8 @@ ru:
       tests: "Список тестов"
       gists: "GitHub Gists"
       badges: "Бэйджи"
+    account: "Аккаунт"
+    achievements: "Достижения"
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"

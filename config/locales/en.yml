@@ -218,6 +218,9 @@ en:
       success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
     time_expired: "Time has expired!"
+  achievements:
+    index:
+      header: "Achievements"
   feedbacks:
     create:
       success: "Your message was sent successfully!"
@@ -240,6 +243,8 @@ en:
       tests: "List of tests"
       gists: "GitHub Gists"
       badges: "Badges"
+    account: "Account"
+    achievements: "Achievements"
     logout: "Logout"
     signup: "Signup"
     login: "Login"

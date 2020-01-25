@@ -1,0 +1,8 @@
+<div class="media mt-3">
+  <%= image_tag(achievement.badge.image, class: 'align-self-start mr-3 img-thumbnail rounded', size: 100) %>
+  <div class="media-body">
+    <h5 class="mt-0"><%= achievement.badge.title %></h5>
+    <p><%= condition_title(achievement.badge.condition) %></p>
+    <p><small class="text-muted"><%= l achievement.created_at, format: :long %></small></p>
+  </div>
+</div>
