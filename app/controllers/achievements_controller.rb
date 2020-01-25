@@ -3,5 +3,6 @@ class AchievementsController < ApplicationController
 
   def index
     @achievements = current_user.achievements.order(created_at: :desc)
+    @badges = Badge.all
   end
 end

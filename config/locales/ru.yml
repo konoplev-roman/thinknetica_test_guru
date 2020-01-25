@@ -235,6 +235,8 @@ ru:
   achievements:
     index:
       header: "Достижения"
+      achieved: "Заработано"
+      all: "Все доступные"
   feedbacks:
     create:
       success: "Ваше сообщение успешно отправлено!"

@@ -1,5 +1,16 @@
 <div class="my-3 p-3 bg-white rounded shadow-sm">
   <h1><%= t('.header') %></h1>
 
-  <%= render @achievements %>
+  <div class="row">
+    <div class="col">
+      <h3><%= t('.achieved') %></h3>
+
+      <%= render @achievements %>
+    </div>
+    <div class="col">
+      <h3><%= t('.all') %></h3>
+
+      <%= render 'badges', badges: @badges %>
+    </div>
+  </div>
 </div>

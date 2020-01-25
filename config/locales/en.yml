@@ -221,6 +221,8 @@ en:
   achievements:
     index:
       header: "Achievements"
+      achieved: "Achieved"
+      all: "All available"
   feedbacks:
     create:
       success: "Your message was sent successfully!"
