@@ -7,6 +7,7 @@
         <div class="dropdown-menu">
           <%= link_to t('nav.admin.tests'), admin_tests_path, class: 'dropdown-item' %>
           <%= link_to t('nav.admin.gists'), admin_gists_path, class: 'dropdown-item' %>
+          <%= link_to t('nav.admin.badges'), admin_badges_path, class: 'dropdown-item' %>
         </div>
       </li>
       <% end %>
@@ -14,8 +15,17 @@
 
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to current_user.first_name, edit_user_registration_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %></a>
+          <div class="dropdown-menu">
+            <%= link_to t('nav.account'), edit_user_registration_path, class: 'dropdown-item' %>
+            <%= link_to achievements_path, class: 'dropdown-item' do %>
+              <%= t('nav.achievements') %>
+              <span class="ml-1 badge badge-pill badge-light"><%= current_user.achievements.count %></span>
+            <% end %>
+            <%= link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
       <% else %>
         <li class="nav-item"><%= link_to t('nav.signup'), new_user_registration_path, class: 'nav-link' %></li>
         <li class="nav-item"><%= link_to t('nav.login'), new_user_session_path, class: 'nav-link' %></li>

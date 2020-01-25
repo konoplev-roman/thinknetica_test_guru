@@ -1,0 +1,9 @@
+<% badges.each do |badge| %>
+  <div class="media mt-3">
+    <%= image_tag(badge.image, class: 'align-self-start mr-3 img-thumbnail rounded', size: 60) %>
+    <div class="media-body">
+      <h5 class="mt-0"><%= badge.title %></h5>
+      <p><%= condition_title(badge.condition) %></p>
+    </div>
+  </div>
+<% end %>

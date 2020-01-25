@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-vasya = User.new(first_name: 'Василий', last_name: 'Иванов', email: 'vasya@example.com', password: 'vasya123', password_confirmation: 'vasya123')
+vasya = User.new(first_name: 'Василий', last_name: 'Иванов', email: 'vasya@example.com', password: 'vasya123', password_confirmation: 'vasya123', type: 'Admin')
 vasya.skip_confirmation!
 vasya.save!
 
@@ -21,11 +21,17 @@ tests = Test.create!([
   { category: categories[2], title: 'Общие темы', level: 5, author: vasya }
 ])
 
-PassedTest.create([
-  { user: vasya, test: tests[0] },
-  { user: vasya, test: tests[1] },
-  { user: petya, test: tests[2] },
-  { user: petya, test: tests[3] }
+Badge.create!([
+  { title: 'Изучена История', image: 'badges/book.png', condition: 'success_by_category', target: categories[0].id },
+  { title: 'Изучена Биология', image: 'badges/book.png', condition: 'success_by_category', target: categories[1].id },
+  { title: 'Изучено Финансовое право', image: 'badges/book.png', condition: 'success_by_category', target: categories[2].id },
+  { title: 'Преодолен легкий уровень', image: 'badges/star.png', condition: 'success_by_level', target: 1 },
+  { title: 'Преодолен средний уровень', image: 'badges/star.png', condition: 'success_by_level', target: 2 },
+  { title: 'Преодолен сложный уровень', image: 'badges/star.png', condition: 'success_by_level', target: 3 },
+  { title: 'Знаток истории', image: 'badges/thumb-up.png', condition: 'without_errors', target: tests[0].id },
+  { title: 'Знаток финансового права', image: 'badges/thumb-up.png', condition: 'success_first_attempt', target: tests[3].id },
+  { title: 'Всезнайка', image: 'badges/cup.png', condition: 'success_all_tests' },
+  { title: 'Гуру', image: 'badges/done.png', condition: 'all_achievements' }
 ])
 
 questions = Question.create!([

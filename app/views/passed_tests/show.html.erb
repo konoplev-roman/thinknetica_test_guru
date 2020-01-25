@@ -2,7 +2,22 @@
   <h1><%= t('.header', test: @passed_test.test.title) %></h1>
 
   <%= form_with url: passed_test_path(@passed_test), id: 'form', local: true, method: :put do |form| %>
-    <p class="small"><%= t('.description', category: @passed_test.test.category.title, level: test_level(@passed_test.test), author: @passed_test.test.author.first_name) %></p>
+    <div class="row">
+      <div class="col">
+        <p class="small"><%= t('.description', category: @passed_test.test.category.title, level: test_level(@passed_test.test), author: @passed_test.test.author.first_name) %></p>
+      </div>
+        <% if @passed_test.timer? %>
+          <div class="col">
+            <%= content_tag :p, id: 'timer', class: 'small hide text-right', data: { complete_before: @passed_test.complete_before.iso8601 } do %>
+              <%= t('.time_left') %>
+              <span id="days"></span><%= t('.day') %>
+              <span id="hours"></span><%= t('.hour') %>
+              <span id="minutes"></span><%= t('.min') %>
+              <span id="seconds"></span><%= t('.sec') %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
 
     <div class="progress mb-3">
       <%= content_tag :div,
@@ -12,16 +27,6 @@
           data: { progress: @passed_test.progress }
       %>
     </div>
-
-    <% if @passed_test.timer? %>
-      <%= content_tag :p, id: 'timer', class: 'small hide', data: { complete_before: @passed_test.complete_before.iso8601 } do %>
-        <%= t('.time_left') %>
-        <span id="days"></span><%= t('.day') %>
-        <span id="hours"></span><%= t('.hour') %>
-        <span id="minutes"></span><%= t('.min') %>
-        <span id="seconds"></span><%= t('.sec') %>
-      <% end %>
-    <% end %>
 
     <p><%= @passed_test.current_question.body %></p>
 

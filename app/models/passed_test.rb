@@ -3,25 +3,39 @@ class PassedTest < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', foreign_key: 'question_id', optional: true
 
+  PERCENT_CORRECT_FOR_SUCCESS = 80
+
   before_validation :before_validation_set_question, on: %i[create update]
+
+  scope :completed, -> { where(current_question: nil) }
+  scope :after, ->(date) { where(created_at: [date..Time.current]) }
+  scope :success_completed, -> { completed.where(percent_correct: [PERCENT_CORRECT_FOR_SUCCESS..100]) }
+
+  scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
+  scope :by_category, ->(category_id) { joins(:test).where(tests: { category_id: category_id }) }
+
+  def self.uniq_test_ids
+    select(:test_id).distinct.order(test_id: :asc).pluck(:test_id)
+  end
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.current_question = nil if time_expired?
+    self.percent_correct = (correct_questions.to_f * 100 / test.questions.count).floor
 
     save!
   end
 
-  def complited?
+  def completed?
     current_question.nil?
   end
 
   def success?
-    success_percent >= 85
+    percent_correct >= PERCENT_CORRECT_FOR_SUCCESS
   end
 
-  def success_percent
-    (correct_questions.to_f * 100 / test.questions.count).round(0)
+  def without_errors?
+    percent_correct == 100
   end
 
   def position_current_question

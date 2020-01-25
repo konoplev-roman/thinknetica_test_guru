@@ -26,6 +26,9 @@ en:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
+      badge:
+        one: "Badge"
+        other: "Badges"
     attributes:
       test:
         title: "Title"
@@ -52,6 +55,11 @@ en:
         user: "User"
         question: "Question"
         url: "URL"
+      badge:
+        title: "Title"
+        image: "Image"
+        condition: "Condition for getting"
+        target: "Target"
   helpers:
     select:
       prompt: "Please select"
@@ -75,6 +83,11 @@ en:
       feedback:
         email: "Email"
         message: "Message"
+      badge:
+        title: "Title"
+        image: "Image"
+        condition: "Condition for getting"
+        target: "Target"
     test:
       header:
         create: "Create new test"
@@ -87,6 +100,17 @@ en:
       header:
         create: "Create new answer"
         edit: "Edit answer"
+    badge:
+      header:
+        create: "Create new badge"
+        edit: "Edit badge \"%{title}\""
+      conditions:
+        success_by_category: "successfully passed all tests from category"
+        success_by_level: "successfully passed all tests from level"
+        success_first_attempt: "successfully passed on the first attempt the test"
+        without_errors: "successfully passed without errors the test"
+        success_all_tests: "successfully passed all tests"
+        all_achievements: "received all achievements"
   admin:
     title: "TestGuru Admin Panel"
     tests:
@@ -142,6 +166,27 @@ en:
           user: "User"
           question: "Question"
           url: "URL"
+    badges:
+      index:
+        header: "Badges"
+        table:
+          image: "Image"
+          title: "Title"
+          condition: "Condition for getting"
+          actions: "Actions"
+        add_new_badge: "Add new badge"
+      destroy:
+        success: "Badge successfully removed!"
+      create:
+        success: "Badge successfully created!"
+      update:
+        success: "Badge successfully updated!"
+      update_inline:
+        success: "Badge successfully updated!"
+      form:
+        prompt_category: "Please select category"
+        prompt_test: "Please select test"
+        prompt_level: "Please select level"
   tests:
     index:
       header: "List of tests"
@@ -173,6 +218,11 @@ en:
       success: "Gist was successfully created! %{link}"
       failure: "An error occurred while saving gist!"
     time_expired: "Time has expired!"
+  achievements:
+    index:
+      header: "Achievements"
+      achieved: "Achieved"
+      all: "All available"
   feedbacks:
     create:
       success: "Your message was sent successfully!"
@@ -194,6 +244,9 @@ en:
       title: "Admin Panel"
       tests: "List of tests"
       gists: "GitHub Gists"
+      badges: "Badges"
+    account: "Account"
+    achievements: "Achievements"
     logout: "Logout"
     signup: "Signup"
     login: "Login"

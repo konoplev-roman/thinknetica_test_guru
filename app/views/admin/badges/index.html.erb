@@ -1,0 +1,32 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1><%= t('.header') %></h1>
+
+  <%= render 'shared/errors', resource: @badge %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="sort-by-title">
+          <%= t('.table.title') %>
+          <span class="sort">
+            <%= octicon 'triangle-up', height: 12, class: 'sort-asc' %>
+            <%= octicon 'triangle-down', height: 12, class: 'sort-desc' %>
+          </span>
+        </th>
+        <th scope="col"><%= t('.table.image') %></th>
+        <th scope="col"><%= t('.table.condition') %></th>
+        <th scope="col" colspan="2" class="text-right"><%= t('.table.actions') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @badges %>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5" class="text-right"><%= link_to t('.add_new_badge'), new_admin_badge_path %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

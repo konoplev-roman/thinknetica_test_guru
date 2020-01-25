@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :achievements, only: :index
+
   resources :passed_tests, only: %i[show update] do
     member do
       get :result
@@ -30,5 +32,9 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+
+    resources :badges, except: :show do
+      patch :update_inline, on: :member
+    end
   end
 end

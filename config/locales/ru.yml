@@ -36,6 +36,11 @@ ru:
       gist:
         one: "GitHub Gist"
         other: "GitHub Gists"
+      badge:
+        few: "Бейджа"
+        many: "Бейджей"
+        one: "Бейдж"
+        other: "Бейджи"
     attributes:
       test:
         title: "Название"
@@ -62,6 +67,11 @@ ru:
         user: "Пользователь"
         question: "Вопрос"
         url: "URL"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        condition: "Условие получения"
+        target: "Цель"
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -85,6 +95,11 @@ ru:
       feedback:
         email: "Email"
         message: "Сообщение"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        condition: "Условие получения"
+        target: "Цель"
     test:
       header:
         create: "Создание нового теста"
@@ -97,6 +112,17 @@ ru:
       header:
         create: "Создание нового ответа на вопрос"
         edit: "Редактирование ответа на вопрос"
+    badge:
+      header:
+        create: "Создание нового бейджа"
+        edit: "Редактирование бейджа \"%{title}\""
+      conditions:
+        success_by_category: "успешно пройдены все тесты из категории"
+        success_by_level: "успешно пройдены все тесты уровня"
+        success_first_attempt: "успешно пройден с первой попытки тест"
+        without_errors: "успешно пройден без ошибок тест"
+        success_all_tests: "успешно пройдены все тесты"
+        all_achievements: "получены все остальные достижения"
   admin:
     title: "Панель администратора TestGuru"
     tests:
@@ -152,6 +178,27 @@ ru:
           user: "Пользователь"
           question: "Вопрос"
           url: "URL"
+    badges:
+      index:
+        header: "Бэйджи"
+        table:
+          image: "Изображение"
+          title: "Название"
+          condition: "Условие получения"
+          actions: "Действия"
+        add_new_badge: "Добавить новый бейдж"
+      destroy:
+        success: "Бэйдж успешно удален!"
+      create:
+        success: "Бэйдж успешно создан!"
+      update:
+        success: "Бэйдж успешно обновлен!"
+      update_inline:
+        success: "Бэйдж успешно обновлен!"
+      form:
+        prompt_category: "Пожалуйста, выберите категорию"
+        prompt_test: "Пожалуйста, выберите тест"
+        prompt_level: "Пожалуйста, выберите уровень сложности"
   tests:
     index:
       header: "Список тестов"
@@ -185,6 +232,11 @@ ru:
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения Gist произошла ошибка!"
     time_expired: "Время истекло!"
+  achievements:
+    index:
+      header: "Достижения"
+      achieved: "Заработано"
+      all: "Все доступные"
   feedbacks:
     create:
       success: "Ваше сообщение успешно отправлено!"
@@ -208,6 +260,9 @@ ru:
       title: "Панель администратора"
       tests: "Список тестов"
       gists: "GitHub Gists"
+      badges: "Бэйджи"
+    account: "Аккаунт"
+    achievements: "Достижения"
     logout: "Выйти"
     signup: "Регистрация"
     login: "Войти"

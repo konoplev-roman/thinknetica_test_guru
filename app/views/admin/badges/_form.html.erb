@@ -1,0 +1,53 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h1><%= badge_header(@badge) %></h1>
+
+  <%= render 'shared/errors', resource: @badge %>
+
+  <%= form_with model: [:admin, @badge], local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :image %>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+      <% @images.each_with_index do |image, i| %>
+        <div class="col-sm-2">
+          <div class="custom-control custom-radio mb-3">
+            <%= form.radio_button :image, image, id: "badge_#{i}", class: 'custom-control-input' %>
+            <%= form.label i, image_tag(image, class: 'img-thumbnail rounded', size: 100), class: 'custom-control-label' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :condition %>
+      <%= form.select(:condition, conditions_list, { prompt: true }, { class: 'form-control' }) %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.collection_select :target, Category.all, :id, :title, { prompt: t('.prompt_category') }, { class: 'form-control select-target success_by_category', disabled: true, id: :target_category } %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.collection_select :target, Test.all, :id, :title, { prompt: t('.prompt_test') }, { class: 'form-control select-target success_first_attempt without_errors', disabled: true, id: :target_test } %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.number_field :target, class: 'form-control select-target success_by_level', disabled: true, id: :target_level, placeholder: t('.prompt_level') %>
+    </div>
+
+    <%= form.hidden_field(:target, class: 'select-target', disabled: true, id: :target_empty) %>
+
+    <hr class="mb-4">
+
+    <div class="d-flex bd-highlight mb-3">
+      <%= form.submit class: 'btn btn-primary btn-lg' %>
+      <%= link_to t('back'), admin_badges_path, class: 'ml-auto' %>
+    </div>
+  <% end %>
+</div>
